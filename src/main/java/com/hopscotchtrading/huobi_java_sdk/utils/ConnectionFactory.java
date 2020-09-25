@@ -1,26 +1,19 @@
 package com.hopscotchtrading.huobi_java_sdk.utils;
 
-import java.io.IOException;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.TimeUnit;
-
+import com.hopscotchtrading.huobi_java_sdk.exception.SDKException;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import okhttp3.ConnectionPool;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.WebSocket;
-import okhttp3.WebSocketListener;
+import lombok.extern.slf4j.Slf4j;
+import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import com.hopscotchtrading.huobi_java_sdk.exception.SDKException;
+import java.io.IOException;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
+@Slf4j
 public class ConnectionFactory {
 
     private static Boolean LATENCY_DEBUG_SWATCH = Boolean.FALSE;
@@ -51,8 +44,6 @@ public class ConnectionFactory {
                     return response;
                 }
             }).build();
-
-    private static final Logger log = LoggerFactory.getLogger(ConnectionFactory.class);
 
     public static String execute(Request request) {
 
