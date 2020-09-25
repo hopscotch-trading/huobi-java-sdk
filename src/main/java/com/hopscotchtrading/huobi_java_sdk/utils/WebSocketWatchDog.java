@@ -1,16 +1,15 @@
 package com.hopscotchtrading.huobi_java_sdk.utils;
 
+import com.hopscotchtrading.huobi_java_sdk.constant.enums.ConnectionStateEnum;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.hopscotchtrading.huobi_java_sdk.constant.enums.ConnectionStateEnum;
-
+@Slf4j
 public class WebSocketWatchDog {
 
     public static final long RECEIVE_LIMIT_TS = 60_000;
@@ -18,7 +17,6 @@ public class WebSocketWatchDog {
     public static final int DELAY_ON_FAILURE = 15;
 
     private static final Map<Long, WebSocketConnection> TIME_HELPER = new ConcurrentHashMap<>();
-    private static final Logger log = LoggerFactory.getLogger(WebSocketWatchDog.class);
 
     static {
         long t = 1_000;
