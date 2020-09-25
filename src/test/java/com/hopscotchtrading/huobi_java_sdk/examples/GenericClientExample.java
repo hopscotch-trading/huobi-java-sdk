@@ -1,14 +1,13 @@
 package com.hopscotchtrading.huobi_java_sdk.examples;
 
-import java.util.List;
-
 import com.hopscotchtrading.huobi_java_sdk.client.GenericClient;
+import com.hopscotchtrading.huobi_java_sdk.client.req.generic.CurrencyChainsRequest;
+import com.hopscotchtrading.huobi_java_sdk.constant.HuobiOptions;
 import com.hopscotchtrading.huobi_java_sdk.model.generic.CurrencyChain;
 import com.hopscotchtrading.huobi_java_sdk.model.generic.MarketStatus;
 import com.hopscotchtrading.huobi_java_sdk.model.generic.Symbol;
-import com.hopscotchtrading.huobi_java_sdk.client.req.generic.CurrencyChainsRequest;
-import com.hopscotchtrading.huobi_java_sdk.constant.HuobiOptions;
-import com.huobi.model.generic.*;
+
+import java.util.List;
 
 public class GenericClientExample {
 
