@@ -18,23 +18,23 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.HuobiIsolatedMarginServ
 
 public interface IsolatedMarginClient {
 
-  Long transfer(IsolatedMarginTransferRequest request);
+    Long transfer(IsolatedMarginTransferRequest request);
 
-  Long applyLoan(IsolatedMarginApplyLoanRequest request);
+    Long applyLoan(IsolatedMarginApplyLoanRequest request);
 
-  Long repayLoan(IsolatedMarginRepayLoanRequest request);
+    Long repayLoan(IsolatedMarginRepayLoanRequest request);
 
-  List<IsolatedMarginLoadOrder> getLoanOrders(IsolatedMarginLoanOrdersRequest request);
+    List<IsolatedMarginLoadOrder> getLoanOrders(IsolatedMarginLoanOrdersRequest request);
 
-  List<IsolatedMarginAccount> getLoanBalance(IsolatedMarginAccountRequest request);
+    List<IsolatedMarginAccount> getLoanBalance(IsolatedMarginAccountRequest request);
 
-  List<IsolatedMarginSymbolInfo> getLoanInfo(IsolatedMarginLoanInfoRequest request);
+    List<IsolatedMarginSymbolInfo> getLoanInfo(IsolatedMarginLoanInfoRequest request);
 
-  static IsolatedMarginClient create(Options options) {
+    static IsolatedMarginClient create(Options options) {
 
-    if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
-      return new HuobiIsolatedMarginService(options);
+        if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
+            return new HuobiIsolatedMarginService(options);
+        }
+        throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
     }
-    throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
-  }
 }

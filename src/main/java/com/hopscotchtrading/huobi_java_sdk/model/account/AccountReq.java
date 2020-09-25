@@ -15,12 +15,12 @@ import lombok.ToString;
 @ToString
 public class AccountReq {
 
-  private String topic;
+    private String topic;
 
-  private Long ts;
+    private Long ts;
 
-  private String cid;
+    private String cid;
 
-  private List<AccountBalance> balanceList;
+    private List<AccountBalance> balanceList;
 
 }

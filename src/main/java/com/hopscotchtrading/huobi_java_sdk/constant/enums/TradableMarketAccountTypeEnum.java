@@ -7,11 +7,10 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum TradableMarketAccountTypeEnum {
 
-  ISOLATED_MARGIN("isolated-margin"),
+    ISOLATED_MARGIN("isolated-margin"),
 
-  CROSS_MARGIN("cross-margin"),
-  ;
+    CROSS_MARGIN("cross-margin"),;
 
-  private final String accountType;
+    private final String accountType;
 
 }

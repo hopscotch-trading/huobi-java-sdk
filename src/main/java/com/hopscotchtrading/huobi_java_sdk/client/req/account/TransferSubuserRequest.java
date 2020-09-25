@@ -1,6 +1,5 @@
 package com.hopscotchtrading.huobi_java_sdk.client.req.account;
 
-
 import java.math.BigDecimal;
 
 import com.hopscotchtrading.huobi_java_sdk.constant.enums.TransferMasterTypeEnum;
@@ -17,12 +16,12 @@ import lombok.ToString;
 @ToString
 public class TransferSubuserRequest {
 
-  private Long subUid;
+    private Long subUid;
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private TransferMasterTypeEnum type;
+    private TransferMasterTypeEnum type;
 
 }

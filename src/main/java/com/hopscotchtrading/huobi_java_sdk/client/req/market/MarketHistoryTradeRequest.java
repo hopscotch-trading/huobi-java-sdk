@@ -13,8 +13,8 @@ import lombok.ToString;
 @ToString
 public class MarketHistoryTradeRequest {
 
-  private String symbol;
+    private String symbol;
 
-  private Integer size;
+    private Integer size;
 
 }

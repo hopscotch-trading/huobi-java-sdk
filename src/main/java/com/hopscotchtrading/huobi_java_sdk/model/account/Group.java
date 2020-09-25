@@ -13,10 +13,10 @@ import lombok.ToString;
 @ToString
 public class Group {
 
-  Long groupId;
+    Long groupId;
 
-  Long expiryDate;
+    Long expiryDate;
 
-  String remainAmt;
+    String remainAmt;
 
 }

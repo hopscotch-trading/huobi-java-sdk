@@ -15,8 +15,8 @@ import lombok.ToString;
 @ToString
 public class PriceLevel {
 
-  private BigDecimal price;
+    private BigDecimal price;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
 }

@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserManagementResult {
 
-  private Long subUid;
+    private Long subUid;
 
-  private String userState;
+    private String userState;
 
 }

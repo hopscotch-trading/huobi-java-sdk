@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountUpdateEvent {
 
-  private String action;
+    private String action;
 
-  private String topic;
+    private String topic;
 
-  private AccountUpdate accountUpdate;
+    private AccountUpdate accountUpdate;
 
 }

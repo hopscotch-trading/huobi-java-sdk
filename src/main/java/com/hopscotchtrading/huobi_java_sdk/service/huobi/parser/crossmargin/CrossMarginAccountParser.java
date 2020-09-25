@@ -12,34 +12,30 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class CrossMarginAccountParser implements HuobiModelParser<CrossMarginAccount> {
 
-  @Override
-  public CrossMarginAccount parse(JSONObject json) {
-    return CrossMarginAccount.builder()
-        .id(json.getLong("id"))
-        .type(json.getString("type"))
-        .state(json.getString("state"))
-        .riskRate(json.getBigDecimal("risk-rate"))
-        .acctBalanceSum(json.getBigDecimal("acct-balance-sum"))
-        .debtBalanceSum(json.getBigDecimal("debt-balance-sum"))
-        .balanceList(new BalanceParser().parseArray(json.getJSONArray("list")))
-        .build();
-  }
-
-  @Override
-  public CrossMarginAccount parse(JSONArray json) {
-    return null;
-  }
-
-  @Override
-  public List<CrossMarginAccount> parseArray(JSONArray jsonArray) {
-    if (jsonArray == null | jsonArray.size() <= 0) {
-      return new ArrayList<>();
+    @Override
+    public CrossMarginAccount parse(JSONObject json) {
+        return CrossMarginAccount.builder().id(json.getLong("id")).type(json.getString("type"))
+                .state(json.getString("state")).riskRate(json.getBigDecimal("risk-rate"))
+                .acctBalanceSum(json.getBigDecimal("acct-balance-sum"))
+                .debtBalanceSum(json.getBigDecimal("debt-balance-sum"))
+                .balanceList(new BalanceParser().parseArray(json.getJSONArray("list"))).build();
     }
 
-    List<CrossMarginAccount> list = new ArrayList<>();
-    for (int i = 0; i < jsonArray.size(); i++) {
-      list.add(parse(jsonArray.getJSONObject(i)));
+    @Override
+    public CrossMarginAccount parse(JSONArray json) {
+        return null;
     }
-    return list;
-  }
+
+    @Override
+    public List<CrossMarginAccount> parseArray(JSONArray jsonArray) {
+        if (jsonArray == null | jsonArray.size() <= 0) {
+            return new ArrayList<>();
+        }
+
+        List<CrossMarginAccount> list = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            list.add(parse(jsonArray.getJSONObject(i)));
+        }
+        return list;
+    }
 }

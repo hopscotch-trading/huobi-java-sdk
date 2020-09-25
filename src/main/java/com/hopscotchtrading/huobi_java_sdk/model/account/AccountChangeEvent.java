@@ -15,8 +15,8 @@ import lombok.ToString;
 @ToString
 public class AccountChangeEvent {
 
-  private String event;
+    private String event;
 
-  private List<AccountChange> list;
+    private List<AccountChange> list;
 
 }

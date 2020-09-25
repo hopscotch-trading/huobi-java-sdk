@@ -13,12 +13,12 @@ import lombok.ToString;
 @ToString
 public class DepositAddress {
 
-  private String currency;
+    private String currency;
 
-  private String address;
+    private String address;
 
-  private String addressTag;
+    private String addressTag;
 
-  private String chain;
+    private String chain;
 
 }

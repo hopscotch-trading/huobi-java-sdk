@@ -15,10 +15,10 @@ import lombok.ToString;
 @ToString
 public class MarketDepthRequest {
 
-  private String symbol;
+    private String symbol;
 
-  private DepthSizeEnum depth;
+    private DepthSizeEnum depth;
 
-  private DepthStepEnum step;
+    private DepthStepEnum step;
 
 }

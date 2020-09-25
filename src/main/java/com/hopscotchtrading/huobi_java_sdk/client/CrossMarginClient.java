@@ -16,23 +16,23 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.HuobiCrossMarginService
 
 public interface CrossMarginClient {
 
-  Long transfer(CrossMarginTransferRequest request);
+    Long transfer(CrossMarginTransferRequest request);
 
-  Long applyLoan(CrossMarginApplyLoanRequest request);
+    Long applyLoan(CrossMarginApplyLoanRequest request);
 
-  void repayLoan(CrossMarginRepayLoanRequest request);
+    void repayLoan(CrossMarginRepayLoanRequest request);
 
-  List<CrossMarginLoadOrder> getLoanOrders(CrossMarginLoanOrdersRequest request);
+    List<CrossMarginLoadOrder> getLoanOrders(CrossMarginLoanOrdersRequest request);
 
-  CrossMarginAccount getLoanBalance();
+    CrossMarginAccount getLoanBalance();
 
-  List<CrossMarginCurrencyInfo> getLoanInfo();
+    List<CrossMarginCurrencyInfo> getLoanInfo();
 
-  static CrossMarginClient create(Options options) {
+    static CrossMarginClient create(Options options) {
 
-    if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
-      return new HuobiCrossMarginService(options);
+        if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
+            return new HuobiCrossMarginService(options);
+        }
+        throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
     }
-    throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
-  }
 }

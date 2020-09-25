@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetApiKeyListRequest {
 
-  private Long uid;
+    private Long uid;
 
-  private String accessKey;
+    private String accessKey;
 
 }

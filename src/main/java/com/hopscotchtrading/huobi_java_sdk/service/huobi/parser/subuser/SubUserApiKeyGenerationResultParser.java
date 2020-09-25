@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class SubUserApiKeyGenerationResultParser implements HuobiModelParser<SubUserApiKeyGenerationResult> {
 
-  @Override
-  public SubUserApiKeyGenerationResult parse(JSONObject json) {
-    return json.toJavaObject(SubUserApiKeyGenerationResult.class);
-  }
+    @Override
+    public SubUserApiKeyGenerationResult parse(JSONObject json) {
+        return json.toJavaObject(SubUserApiKeyGenerationResult.class);
+    }
 
-  @Override
-  public SubUserApiKeyGenerationResult parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public SubUserApiKeyGenerationResult parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<SubUserApiKeyGenerationResult> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<SubUserApiKeyGenerationResult> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

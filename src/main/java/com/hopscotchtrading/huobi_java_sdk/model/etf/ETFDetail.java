@@ -16,15 +16,14 @@ import lombok.ToString;
 @ToString
 public class ETFDetail {
 
-  private BigDecimal rate;
+    private BigDecimal rate;
 
-  private BigDecimal fee;
+    private BigDecimal fee;
 
-  private BigDecimal pointCardAmount;
+    private BigDecimal pointCardAmount;
 
-  private List<ETFUnitPrice> obtainCurrencyList;
+    private List<ETFUnitPrice> obtainCurrencyList;
 
-  private List<ETFUnitPrice> usedCurrencyList;
-
+    private List<ETFUnitPrice> usedCurrencyList;
 
 }

@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class AccountFuturesTransferResultParser implements HuobiModelParser<AccountFuturesTransferResult> {
 
-  @Override
-  public AccountFuturesTransferResult parse(JSONObject json) {
-    return AccountFuturesTransferResult.builder().data(json.getLong("data")).build();
-  }
+    @Override
+    public AccountFuturesTransferResult parse(JSONObject json) {
+        return AccountFuturesTransferResult.builder().data(json.getLong("data")).build();
+    }
 
-  @Override
-  public AccountFuturesTransferResult parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public AccountFuturesTransferResult parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<AccountFuturesTransferResult> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<AccountFuturesTransferResult> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

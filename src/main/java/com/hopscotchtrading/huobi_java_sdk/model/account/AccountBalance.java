@@ -15,14 +15,14 @@ import lombok.ToString;
 @ToString
 public class AccountBalance {
 
-  private Long id;
+    private Long id;
 
-  private String type;
+    private String type;
 
-  private String state;
+    private String state;
 
-  private List<Balance> list;
+    private List<Balance> list;
 
-  private String subType;
+    private String subType;
 
 }

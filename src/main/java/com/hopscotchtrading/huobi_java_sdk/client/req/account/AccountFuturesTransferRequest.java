@@ -14,9 +14,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountFuturesTransferRequest {
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private AccountFuturesTransferTypeEnum type;
+    private AccountFuturesTransferTypeEnum type;
 }

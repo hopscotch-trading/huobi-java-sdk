@@ -13,16 +13,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CrossMarginCurrencyInfo {
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal interestRate;
+    private BigDecimal interestRate;
 
-  private BigDecimal minLoanAmt;
+    private BigDecimal minLoanAmt;
 
-  private BigDecimal maxLoanAmt;
+    private BigDecimal maxLoanAmt;
 
-  private BigDecimal loanableAmt;
+    private BigDecimal loanableAmt;
 
-  private BigDecimal actualRate;
+    private BigDecimal actualRate;
 
 }

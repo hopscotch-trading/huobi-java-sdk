@@ -13,52 +13,52 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TradeClearing {
 
-  private String eventType;
+    private String eventType;
 
-  private String symbol;
+    private String symbol;
 
-  private Long orderId;
+    private Long orderId;
 
-  private BigDecimal tradePrice;
+    private BigDecimal tradePrice;
 
-  private BigDecimal tradeVolume;
+    private BigDecimal tradeVolume;
 
-  private String orderSide;
+    private String orderSide;
 
-  private String orderType;
+    private String orderType;
 
-  private Boolean aggressor;
+    private Boolean aggressor;
 
-  private Long tradeId;
+    private Long tradeId;
 
-  private Long tradeTime;
+    private Long tradeTime;
 
-  private BigDecimal transactFee;
+    private BigDecimal transactFee;
 
-  private BigDecimal feeDeduct;
+    private BigDecimal feeDeduct;
 
-  private String feeDeductType;
+    private String feeDeductType;
 
-  private Long accountId;
+    private Long accountId;
 
-  private String source;
+    private String source;
 
-  private BigDecimal orderPrice;
+    private BigDecimal orderPrice;
 
-  private BigDecimal orderSize;
+    private BigDecimal orderSize;
 
-  private BigDecimal orderValue;
+    private BigDecimal orderValue;
 
-  private String clientOrderId;
+    private String clientOrderId;
 
-  private BigDecimal stopPrice;
+    private BigDecimal stopPrice;
 
-  private String operator;
+    private String operator;
 
-  private Long orderCreateTime;
+    private Long orderCreateTime;
 
-  private String orderStatus;
+    private String orderStatus;
 
-  private BigDecimal remainAmt;
+    private BigDecimal remainAmt;
 
 }

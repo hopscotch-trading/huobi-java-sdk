@@ -13,16 +13,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OpenOrdersRequest {
 
-  private  String symbol;
+    private String symbol;
 
-  private Long accountId;
+    private Long accountId;
 
-  private Integer size;
+    private Integer size;
 
-  private OrderSideEnum side;
+    private OrderSideEnum side;
 
-  private QueryDirectionEnum direct;
+    private QueryDirectionEnum direct;
 
-  private Long from;
+    private Long from;
 
 }

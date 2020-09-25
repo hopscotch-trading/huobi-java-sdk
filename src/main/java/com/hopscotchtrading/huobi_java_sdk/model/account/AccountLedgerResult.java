@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountLedgerResult {
 
-  private Long nextId;
+    private Long nextId;
 
-  private List<AccountLedger> ledgerList;
+    private List<AccountLedger> ledgerList;
 
 }

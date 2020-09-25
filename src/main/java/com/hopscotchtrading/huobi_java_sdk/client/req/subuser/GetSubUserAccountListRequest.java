@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetSubUserAccountListRequest {
 
-  private Long subUid;
+    private Long subUid;
 }

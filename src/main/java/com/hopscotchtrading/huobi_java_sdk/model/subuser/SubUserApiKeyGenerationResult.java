@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserApiKeyGenerationResult {
 
-  private String note;
+    private String note;
 
-  private String accessKey;
+    private String accessKey;
 
-  private String secretKey;
+    private String secretKey;
 
-  private String permission;
+    private String permission;
 
-  private String ipAddresses;
+    private String ipAddresses;
 
 }

@@ -18,18 +18,18 @@ import com.hopscotchtrading.huobi_java_sdk.model.account.Balance;
 @ToString
 public class CrossMarginAccount {
 
-  private Long id;
+    private Long id;
 
-  private String type;
+    private String type;
 
-  private String state;
+    private String state;
 
-  private BigDecimal riskRate;
+    private BigDecimal riskRate;
 
-  private BigDecimal acctBalanceSum;
+    private BigDecimal acctBalanceSum;
 
-  private BigDecimal debtBalanceSum;
+    private BigDecimal debtBalanceSum;
 
-  private List<Balance> balanceList;
+    private List<Balance> balanceList;
 
 }

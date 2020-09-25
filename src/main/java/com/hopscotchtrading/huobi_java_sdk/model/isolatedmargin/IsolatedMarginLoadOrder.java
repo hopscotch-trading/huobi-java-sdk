@@ -15,42 +15,42 @@ import lombok.ToString;
 @ToString
 public class IsolatedMarginLoadOrder {
 
-  private Long id;
+    private Long id;
 
-  private Long userId;
+    private Long userId;
 
-  private Long accountId;
+    private Long accountId;
 
-  private String symbol;
+    private String symbol;
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal paidCoin;
+    private BigDecimal paidCoin;
 
-  private BigDecimal paidPoint;
+    private BigDecimal paidPoint;
 
-  private BigDecimal deductAmount;
+    private BigDecimal deductAmount;
 
-  private BigDecimal deductRate;
+    private BigDecimal deductRate;
 
-  private String deductCurrency;
+    private String deductCurrency;
 
-  private BigDecimal loanAmount;
+    private BigDecimal loanAmount;
 
-  private BigDecimal loanBalance;
+    private BigDecimal loanBalance;
 
-  private BigDecimal interestRate;
+    private BigDecimal interestRate;
 
-  private BigDecimal interestAmount;
+    private BigDecimal interestAmount;
 
-  private BigDecimal interestBalance;
+    private BigDecimal interestBalance;
 
-  private String state;
+    private String state;
 
-  private Long createdAt;
+    private Long createdAt;
 
-  private Long updatedAt;
+    private Long updatedAt;
 
-  private Long accruedAt;
+    private Long accruedAt;
 
 }

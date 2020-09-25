@@ -16,10 +16,10 @@ import lombok.ToString;
 @ToString
 public class CrossMarginTransferRequest {
 
-  private MarginTransferDirectionEnum direction;
+    private MarginTransferDirectionEnum direction;
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
 }

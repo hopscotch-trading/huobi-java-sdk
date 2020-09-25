@@ -9,10 +9,10 @@ import com.hopscotchtrading.huobi_java_sdk.model.etf.ETFSwapRecord;
 
 public interface ETFClient {
 
-  ETFConfig getConfig(String etfName);
+    ETFConfig getConfig(String etfName);
 
-  void etfSwap(ETFSwapRequest request);
+    void etfSwap(ETFSwapRequest request);
 
-  List<ETFSwapRecord> getEtfSwapList(ETFSwapListRequest request);
+    List<ETFSwapRecord> getEtfSwapList(ETFSwapListRequest request);
 
 }

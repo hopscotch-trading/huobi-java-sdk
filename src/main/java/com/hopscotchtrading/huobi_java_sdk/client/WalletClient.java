@@ -18,23 +18,23 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.HuobiWalletService;
 
 public interface WalletClient {
 
-  List<DepositAddress> getDepositAddress(DepositAddressRequest request);
+    List<DepositAddress> getDepositAddress(DepositAddressRequest request);
 
-  WithdrawQuota getWithdrawQuota(WithdrawQuotaRequest request);
+    WithdrawQuota getWithdrawQuota(WithdrawQuotaRequest request);
 
-  WithdrawAddressResult getWithdrawAddress(WithdrawAddressRequest request);
+    WithdrawAddressResult getWithdrawAddress(WithdrawAddressRequest request);
 
-  Long createWithdraw(CreateWithdrawRequest request);
+    Long createWithdraw(CreateWithdrawRequest request);
 
-  Long cancelWithdraw(Long withdrawId);
+    Long cancelWithdraw(Long withdrawId);
 
-  List<DepositWithdraw> getDepositWithdraw(DepositWithdrawRequest request);
+    List<DepositWithdraw> getDepositWithdraw(DepositWithdrawRequest request);
 
-  static WalletClient create(Options options) {
+    static WalletClient create(Options options) {
 
-    if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
-      return new HuobiWalletService(options);
+        if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
+            return new HuobiWalletService(options);
+        }
+        throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
     }
-    throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
-  }
 }

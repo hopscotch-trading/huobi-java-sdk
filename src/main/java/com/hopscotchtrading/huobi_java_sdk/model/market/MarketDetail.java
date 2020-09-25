@@ -15,23 +15,22 @@ import lombok.ToString;
 @ToString
 public class MarketDetail {
 
-  private Long id;
+    private Long id;
 
-  private BigDecimal open;
+    private BigDecimal open;
 
-  private BigDecimal close;
+    private BigDecimal close;
 
-  private BigDecimal low;
+    private BigDecimal low;
 
-  private BigDecimal high;
+    private BigDecimal high;
 
-  private Long count;
+    private Long count;
 
-  private BigDecimal vol;
+    private BigDecimal vol;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private Long version;
-
+    private Long version;
 
 }

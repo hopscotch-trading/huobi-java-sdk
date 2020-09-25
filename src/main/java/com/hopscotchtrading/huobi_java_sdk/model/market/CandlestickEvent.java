@@ -13,10 +13,10 @@ import lombok.ToString;
 @ToString
 public class CandlestickEvent {
 
-  private String ch;
+    private String ch;
 
-  private Long ts;
+    private Long ts;
 
-  private Candlestick candlestick;
+    private Candlestick candlestick;
 
 }

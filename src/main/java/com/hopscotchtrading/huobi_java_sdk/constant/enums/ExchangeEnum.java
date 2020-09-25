@@ -5,12 +5,14 @@ import lombok.Getter;
 @Getter
 public enum ExchangeEnum {
 
-  HUOBI("huobi"),
+    HUOBI("huobi"),
 
-  ;
-  private final String code;
-  ExchangeEnum(String code) {
-    this.code = code;
-  }
+    ;
+
+    private final String code;
+
+    ExchangeEnum(String code) {
+        this.code = code;
+    }
 
 }

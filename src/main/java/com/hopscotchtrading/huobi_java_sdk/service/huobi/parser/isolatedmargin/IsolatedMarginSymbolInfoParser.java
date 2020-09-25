@@ -11,32 +11,30 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class IsolatedMarginSymbolInfoParser implements HuobiModelParser<IsolatedMarginSymbolInfo> {
 
-  @Override
-  public IsolatedMarginSymbolInfo parse(JSONObject json) {
-    return IsolatedMarginSymbolInfo.builder()
-        .symbol(json.getString("symbol"))
-        .currencies(new IsolatedMarginCurrencyInfoParser().parseArray(json.getJSONArray("currencies")))
-        .build();
-  }
-
-  @Override
-  public IsolatedMarginSymbolInfo parse(JSONArray json) {
-    return null;
-  }
-
-  @Override
-  public List<IsolatedMarginSymbolInfo> parseArray(JSONArray jsonArray) {
-
-    if (jsonArray == null || jsonArray.isEmpty()) {
-      return new ArrayList<>();
+    @Override
+    public IsolatedMarginSymbolInfo parse(JSONObject json) {
+        return IsolatedMarginSymbolInfo.builder().symbol(json.getString("symbol"))
+                .currencies(new IsolatedMarginCurrencyInfoParser().parseArray(json.getJSONArray("currencies"))).build();
     }
 
-    List<IsolatedMarginSymbolInfo> list = new ArrayList<>(jsonArray.size());
-    for (int i = 0; i < jsonArray.size(); i++) {
-      JSONObject jsonObject = jsonArray.getJSONObject(i);
-      list.add(parse(jsonObject));
+    @Override
+    public IsolatedMarginSymbolInfo parse(JSONArray json) {
+        return null;
     }
 
-    return list;
-  }
+    @Override
+    public List<IsolatedMarginSymbolInfo> parseArray(JSONArray jsonArray) {
+
+        if (jsonArray == null || jsonArray.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        List<IsolatedMarginSymbolInfo> list = new ArrayList<>(jsonArray.size());
+        for (int i = 0; i < jsonArray.size(); i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            list.add(parse(jsonObject));
+        }
+
+        return list;
+    }
 }

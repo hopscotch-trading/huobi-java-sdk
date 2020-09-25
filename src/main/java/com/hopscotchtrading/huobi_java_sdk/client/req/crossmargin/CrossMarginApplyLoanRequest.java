@@ -15,8 +15,8 @@ import lombok.ToString;
 @ToString
 public class CrossMarginApplyLoanRequest {
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
 }

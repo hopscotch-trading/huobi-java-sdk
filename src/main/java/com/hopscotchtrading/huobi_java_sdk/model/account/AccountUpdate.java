@@ -13,18 +13,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountUpdate {
 
-  private String currency;
+    private String currency;
 
-  private Long accountId;
+    private Long accountId;
 
-  private BigDecimal balance;
+    private BigDecimal balance;
 
-  private BigDecimal available;
+    private BigDecimal available;
 
-  private String changeType;
+    private String changeType;
 
-  private String accountType;
+    private String accountType;
 
-  private Long changeTime;
+    private Long changeTime;
 
 }

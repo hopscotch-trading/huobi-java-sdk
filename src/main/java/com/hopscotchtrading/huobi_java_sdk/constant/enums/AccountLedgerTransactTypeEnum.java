@@ -2,25 +2,25 @@ package com.hopscotchtrading.huobi_java_sdk.constant.enums;
 
 public enum AccountLedgerTransactTypeEnum {
 
-  TRANSFER("transfer"),
-  ;
-  private final String code;
+    TRANSFER("transfer"),;
 
-  AccountLedgerTransactTypeEnum(String code) {
-    this.code = code;
-  }
+    private final String code;
 
-  public String getCode() {
-    return code;
-  }
-
-  public static AccountLedgerTransactTypeEnum find(String code) {
-    for (AccountLedgerTransactTypeEnum transactType : AccountLedgerTransactTypeEnum.values()) {
-      if (transactType.getCode().equals(code)) {
-        return transactType;
-      }
+    AccountLedgerTransactTypeEnum(String code) {
+        this.code = code;
     }
-    return null;
-  }
+
+    public String getCode() {
+        return code;
+    }
+
+    public static AccountLedgerTransactTypeEnum find(String code) {
+        for (AccountLedgerTransactTypeEnum transactType : AccountLedgerTransactTypeEnum.values()) {
+            if (transactType.getCode().equals(code)) {
+                return transactType;
+            }
+        }
+        return null;
+    }
 
 }

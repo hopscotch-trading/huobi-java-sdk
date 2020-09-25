@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountFuturesTransferResult {
 
-  private Long data;
+    private Long data;
 
 }

@@ -14,8 +14,8 @@ import lombok.ToString;
 @ToString
 public class ReqMarketDepthRequest {
 
-  private String symbol;
+    private String symbol;
 
-  private DepthStepEnum step;
+    private DepthStepEnum step;
 
 }

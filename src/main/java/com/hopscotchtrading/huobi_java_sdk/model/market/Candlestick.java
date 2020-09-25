@@ -15,20 +15,20 @@ import lombok.ToString;
 @ToString
 public class Candlestick {
 
-  private Long id;
+    private Long id;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private BigDecimal count;
+    private BigDecimal count;
 
-  private BigDecimal open;
+    private BigDecimal open;
 
-  private BigDecimal high;
+    private BigDecimal high;
 
-  private BigDecimal low;
+    private BigDecimal low;
 
-  private BigDecimal close;
+    private BigDecimal close;
 
-  private BigDecimal vol;
+    private BigDecimal vol;
 
 }

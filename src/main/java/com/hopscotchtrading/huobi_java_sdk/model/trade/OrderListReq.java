@@ -15,10 +15,10 @@ import lombok.ToString;
 @ToString
 public class OrderListReq {
 
-  private String topic;
+    private String topic;
 
-  private Long ts;
+    private Long ts;
 
-  private List<Order> orderList;
+    private List<Order> orderList;
 
 }

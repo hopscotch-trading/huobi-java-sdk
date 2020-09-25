@@ -7,11 +7,9 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum AlgoOrderStatusEnum {
 
-  CREATED("created"),
-  CANCELED("canceled"),
-  TRIGGERED("triggered"),
-  REJECTED("rejected"),
+    CREATED("created"), CANCELED("canceled"), TRIGGERED("triggered"), REJECTED("rejected"),
 
-  ;
-  private final String status;
+    ;
+
+    private final String status;
 }

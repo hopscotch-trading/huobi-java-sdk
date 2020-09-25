@@ -6,9 +6,8 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum QuerySortEnum {
-  ASC("asc"),
-  DESC("desc");
+    ASC("asc"), DESC("desc");
 
-  private final String sort;
+    private final String sort;
 
 }

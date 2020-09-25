@@ -26,42 +26,42 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.HuobiTradeService;
 
 public interface TradeClient {
 
-  Long createOrder(CreateOrderRequest request);
+    Long createOrder(CreateOrderRequest request);
 
-  Long cancelOrder(Long orderId);
+    Long cancelOrder(Long orderId);
 
-  Integer cancelOrder(String clientOrderId);
+    Integer cancelOrder(String clientOrderId);
 
-  BatchCancelOpenOrdersResult batchCancelOpenOrders(BatchCancelOpenOrdersRequest request);
+    BatchCancelOpenOrdersResult batchCancelOpenOrders(BatchCancelOpenOrdersRequest request);
 
-  BatchCancelOrderResult batchCancelOrder(List<Long> ids);
+    BatchCancelOrderResult batchCancelOrder(List<Long> ids);
 
-  List<Order> getOpenOrders(OpenOrdersRequest request);
+    List<Order> getOpenOrders(OpenOrdersRequest request);
 
-  Order getOrder(Long orderId);
+    Order getOrder(Long orderId);
 
-  Order getOrder(String clientOrderId);
+    Order getOrder(String clientOrderId);
 
-  List<Order> getOrders(OrdersRequest request);
+    List<Order> getOrders(OrdersRequest request);
 
-  List<Order> getOrdersHistory(OrderHistoryRequest request);
+    List<Order> getOrdersHistory(OrderHistoryRequest request);
 
-  List<MatchResult> getMatchResult(Long orderId);
+    List<MatchResult> getMatchResult(Long orderId);
 
-  List<MatchResult> getMatchResults(MatchResultRequest request);
+    List<MatchResult> getMatchResults(MatchResultRequest request);
 
-  List<FeeRate> getFeeRate(FeeRateRequest request);
+    List<FeeRate> getFeeRate(FeeRateRequest request);
 
-  void subOrderUpdateV2(SubOrderUpdateV2Request request, ResponseCallback<OrderUpdateV2Event> callback);
+    void subOrderUpdateV2(SubOrderUpdateV2Request request, ResponseCallback<OrderUpdateV2Event> callback);
 
-  void subTradeClearing(SubTradeClearingRequest request, ResponseCallback<TradeClearingEvent> callback);
+    void subTradeClearing(SubTradeClearingRequest request, ResponseCallback<TradeClearingEvent> callback);
 
-  static TradeClient create(Options options) {
+    static TradeClient create(Options options) {
 
-    if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
-      return new HuobiTradeService(options);
+        if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
+            return new HuobiTradeService(options);
+        }
+        throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
     }
-    throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
-  }
 
 }

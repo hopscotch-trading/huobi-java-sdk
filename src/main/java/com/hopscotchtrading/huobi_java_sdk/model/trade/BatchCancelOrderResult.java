@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BatchCancelOrderResult {
 
-  private List<Long> successList;
+    private List<Long> successList;
 
-  private List<CancelFailedResult> failedList;
+    private List<CancelFailedResult> failedList;
 
 }

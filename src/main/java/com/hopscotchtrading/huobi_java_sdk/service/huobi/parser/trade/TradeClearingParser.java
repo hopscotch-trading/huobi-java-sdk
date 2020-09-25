@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class TradeClearingParser implements HuobiModelParser<TradeClearing> {
 
-  @Override
-  public TradeClearing parse(JSONObject json) {
-    return json.toJavaObject(TradeClearing.class);
-  }
+    @Override
+    public TradeClearing parse(JSONObject json) {
+        return json.toJavaObject(TradeClearing.class);
+    }
 
-  @Override
-  public TradeClearing parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public TradeClearing parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<TradeClearing> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<TradeClearing> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

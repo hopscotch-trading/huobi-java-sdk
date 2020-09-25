@@ -13,40 +13,40 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AlgoOrder {
 
-  private Long accountId;
+    private Long accountId;
 
-  private String source;
+    private String source;
 
-  private String clientOrderId;
+    private String clientOrderId;
 
-  private Long orderId;
+    private Long orderId;
 
-  private String symbol;
+    private String symbol;
 
-  private BigDecimal orderPrice;
+    private BigDecimal orderPrice;
 
-  private BigDecimal orderSize;
+    private BigDecimal orderSize;
 
-  private BigDecimal orderValue;
+    private BigDecimal orderValue;
 
-  private String timeInForce;
+    private String timeInForce;
 
-  private String orderType;
+    private String orderType;
 
-  private BigDecimal stopPrice;
+    private BigDecimal stopPrice;
 
-  private BigDecimal trailingRate;
+    private BigDecimal trailingRate;
 
-  private Long orderOrigTime;
+    private Long orderOrigTime;
 
-  private Long lastActTime;
+    private Long lastActTime;
 
-  private Long orderCreateTime;
+    private Long orderCreateTime;
 
-  private String orderStatus;
+    private String orderStatus;
 
-  private Integer errCode;
+    private Integer errCode;
 
-  private String errMessage;
+    private String errMessage;
 
 }

@@ -12,18 +12,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetSubUserDepositRequest {
 
-  private Long subUid;
+    private Long subUid;
 
-  private String currency;
+    private String currency;
 
-  private Long startTime;
+    private Long startTime;
 
-  private Long endTime;
+    private Long endTime;
 
-  private QuerySortEnum sort;
+    private QuerySortEnum sort;
 
-  private Integer limit;
+    private Integer limit;
 
-  private Long fromId;
+    private Long fromId;
 
 }

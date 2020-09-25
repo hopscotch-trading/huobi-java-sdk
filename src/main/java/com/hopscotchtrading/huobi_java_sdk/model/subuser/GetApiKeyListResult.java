@@ -13,5 +13,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetApiKeyListResult {
 
-  private List<ApiKeyInfo> list;
+    private List<ApiKeyInfo> list;
 }

@@ -15,12 +15,12 @@ import lombok.ToString;
 @ToString
 public class AccountChange {
 
-  private Long accountId;
+    private Long accountId;
 
-  private String currency;
+    private String currency;
 
-  private String type;
+    private String type;
 
-  private BigDecimal balance;
+    private BigDecimal balance;
 
 }

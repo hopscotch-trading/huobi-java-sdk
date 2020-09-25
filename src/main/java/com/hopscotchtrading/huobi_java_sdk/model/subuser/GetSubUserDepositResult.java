@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetSubUserDepositResult {
 
-  private List<SubUserDeposit> list;
+    private List<SubUserDeposit> list;
 
-  private Long nextId;
+    private Long nextId;
 
 }

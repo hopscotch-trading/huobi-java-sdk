@@ -13,9 +13,9 @@ import lombok.ToString;
 @ToString
 public class CurrencyChainsRequest {
 
-  private String currency;
+    private String currency;
 
-  @Builder.Default
-  private boolean authorizedUser = true;
+    @Builder.Default
+    private boolean authorizedUser = true;
 
 }

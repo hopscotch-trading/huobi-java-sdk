@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetOpenAlgoOrdersResult {
 
-  private List<AlgoOrder> list;
+    private List<AlgoOrder> list;
 
-  private Long nextId;
+    private Long nextId;
 
 }

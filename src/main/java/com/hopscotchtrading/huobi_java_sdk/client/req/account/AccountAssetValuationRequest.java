@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountAssetValuationRequest {
 
-  AccountTypeEnum accountType;
+    AccountTypeEnum accountType;
 
-  String valuationCurrency;
+    String valuationCurrency;
 
-  Long subUid;
+    Long subUid;
 
 }

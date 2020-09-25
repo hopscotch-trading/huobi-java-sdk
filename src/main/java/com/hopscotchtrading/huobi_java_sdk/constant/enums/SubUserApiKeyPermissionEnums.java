@@ -7,10 +7,10 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum SubUserApiKeyPermissionEnums {
 
-  READ_ONLY("readOnly"),
-  TRADE("trade"),
+    READ_ONLY("readOnly"), TRADE("trade"),
 
-  ;
-  private final String permission;
+    ;
+
+    private final String permission;
 
 }

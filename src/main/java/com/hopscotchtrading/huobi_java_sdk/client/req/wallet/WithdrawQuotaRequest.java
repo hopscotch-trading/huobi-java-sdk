@@ -13,5 +13,5 @@ import lombok.ToString;
 @ToString
 public class WithdrawQuotaRequest {
 
-  private String currency;
+    private String currency;
 }

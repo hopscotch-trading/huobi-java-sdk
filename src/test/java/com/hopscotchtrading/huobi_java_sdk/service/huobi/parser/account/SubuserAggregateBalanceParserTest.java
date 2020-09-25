@@ -13,20 +13,21 @@ import org.powermock.modules.junit4.PowerMockRunner;
 @RunWith(PowerMockRunner.class)
 public class SubuserAggregateBalanceParserTest {
 
-  public static final String JSON_ARRAY_STRING = "[{\"currency\":\"usdt\",\"balance\":\"0\",\"type\":\"spot\"}]";
+    public static final String JSON_ARRAY_STRING = "[{\"currency\":\"usdt\",\"balance\":\"0\",\"type\":\"spot\"}]";
 
-  private SubuserAggregateBalanceParser parser;
+    private SubuserAggregateBalanceParser parser;
 
-  @Before
-  public void init() {
-    parser = new SubuserAggregateBalanceParser();
-  }
+    @Before
+    public void init() {
+        parser = new SubuserAggregateBalanceParser();
+    }
 
-  @Test
-  public void test_array_parse(){
+    @Test
+    public void test_array_parse() {
 
-    List<SubuserAggregateBalance> subuserAggregateBalanceList = parser.parseArray(JSON.parseArray(JSON_ARRAY_STRING));
-    Assert.assertNotNull(subuserAggregateBalanceList);
-    Assert.assertTrue(subuserAggregateBalanceList.size() == 1);
-  }
+        List<SubuserAggregateBalance> subuserAggregateBalanceList = parser
+                .parseArray(JSON.parseArray(JSON_ARRAY_STRING));
+        Assert.assertNotNull(subuserAggregateBalanceList);
+        Assert.assertTrue(subuserAggregateBalanceList.size() == 1);
+    }
 }

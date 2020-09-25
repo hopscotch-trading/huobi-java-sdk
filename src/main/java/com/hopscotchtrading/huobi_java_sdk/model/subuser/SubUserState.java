@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserState {
 
-  private Long uid;
+    private Long uid;
 
-  private String userState;
+    private String userState;
 
 }

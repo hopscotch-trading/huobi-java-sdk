@@ -5,20 +5,17 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum  IsolatedMarginAccountStateEnum {
+public enum IsolatedMarginAccountStateEnum {
 
-  WORKING("working"),
-  FL_SYS("fl-sys"),
-  FL_MGT("fl-mgt"),
-  FL_END("fl-end")
+    WORKING("working"), FL_SYS("fl-sys"), FL_MGT("fl-mgt"), FL_END("fl-end")
 
-  ;
+    ;
 
-  private String code;
+    private String code;
 
-  public static IsolatedMarginAccountStateEnum find(String code) {
+    public static IsolatedMarginAccountStateEnum find(String code) {
 
-    return null;
-  }
+        return null;
+    }
 
 }

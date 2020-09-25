@@ -15,16 +15,16 @@ import lombok.ToString;
 @ToString
 public class CreateWithdrawRequest {
 
-  private String address;
+    private String address;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private BigDecimal fee;
+    private BigDecimal fee;
 
-  private String currency;
+    private String currency;
 
-  private String chain;
+    private String chain;
 
-  private String addrTag;
+    private String addrTag;
 
 }

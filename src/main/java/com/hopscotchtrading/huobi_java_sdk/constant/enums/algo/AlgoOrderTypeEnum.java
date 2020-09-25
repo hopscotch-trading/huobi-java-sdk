@@ -7,9 +7,9 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum AlgoOrderTypeEnum {
 
-  LIMIT("limit"),
-  MARKET("market"),
+    LIMIT("limit"), MARKET("market"),
 
-  ;
-  private final String type;
+    ;
+
+    private final String type;
 }

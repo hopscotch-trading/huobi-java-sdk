@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class SubUserDepositParser implements HuobiModelParser<SubUserDeposit> {
 
-  @Override
-  public SubUserDeposit parse(JSONObject json) {
-    return null;
-  }
+    @Override
+    public SubUserDeposit parse(JSONObject json) {
+        return null;
+    }
 
-  @Override
-  public SubUserDeposit parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public SubUserDeposit parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<SubUserDeposit> parseArray(JSONArray jsonArray) {
-    return jsonArray.toJavaList(SubUserDeposit.class);
-  }
+    @Override
+    public List<SubUserDeposit> parseArray(JSONArray jsonArray) {
+        return jsonArray.toJavaList(SubUserDeposit.class);
+    }
 }

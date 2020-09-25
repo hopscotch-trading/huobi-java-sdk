@@ -18,32 +18,31 @@ import lombok.ToString;
 @ToString
 public class MatchResultRequest {
 
-  private String symbol;
+    private String symbol;
 
-  private List<OrderTypeEnum> types;
+    private List<OrderTypeEnum> types;
 
-  private Date startDate;
+    private Date startDate;
 
-  private Date endDate;
+    private Date endDate;
 
-  private Integer size;
+    private Integer size;
 
-  private String from;
+    private String from;
 
-  private QueryDirectionEnum direction;
+    private QueryDirectionEnum direction;
 
+    public String getTypeString() {
+        if (types == null || types.size() <= 0) {
+            return null;
+        }
 
-  public String getTypeString(){
-    if (types == null || types.size() <= 0) {
-      return null;
+        StringBuffer typeBuffer = new StringBuffer();
+        this.getTypes().forEach(orderType -> {
+            typeBuffer.append(orderType.getCode()).append(",");
+        });
+
+        return typeBuffer.substring(0, typeBuffer.length() - 1);
     }
-
-    StringBuffer typeBuffer = new StringBuffer();
-    this.getTypes().forEach(orderType -> {
-      typeBuffer.append(orderType.getCode()).append(",");
-    });
-
-    return typeBuffer.substring(0, typeBuffer.length() - 1);
-  }
 
 }

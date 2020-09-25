@@ -13,10 +13,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserTradableMarketRequest {
 
-  private String subUids;
+    private String subUids;
 
-  private TradableMarketAccountTypeEnum accountType;
+    private TradableMarketAccountTypeEnum accountType;
 
-  private TradableMarketActivationEnums activation;
+    private TradableMarketActivationEnums activation;
 
 }

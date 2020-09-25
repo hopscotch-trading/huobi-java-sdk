@@ -53,260 +53,223 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.subuser.SubUserT
 
 public class HuobiSubUserService implements SubUserClient {
 
-  public static final String GET_SUBUSER_ACCOUNT_BALANCE_PATH = "/v1/account/accounts/{sub-uid}";
-  public static final String GET_SUBUSER_AGGREGATE_BALANCE_PATH = "/v1/subuser/aggregate-balance";
-  public static final String TRANSFER_SUBUSER_PATH = "/v1/subuser/transfer";
+    public static final String GET_SUBUSER_ACCOUNT_BALANCE_PATH = "/v1/account/accounts/{sub-uid}";
+    public static final String GET_SUBUSER_AGGREGATE_BALANCE_PATH = "/v1/subuser/aggregate-balance";
+    public static final String TRANSFER_SUBUSER_PATH = "/v1/subuser/transfer";
 
-  public static final String SUBUSER_CREATION_PATH = "/v2/sub-user/creation";
-  public static final String GET_SUBUSER_LIST_PATH = "/v2/sub-user/user-list";
-  public static final String GET_SUBUSER_STATE_PATH = "/v2/sub-user/user-state";
-  public static final String SUBUSER_MANAGEMENT_PATH = "/v2/sub-user/management";
-  public static final String GET_SUBUSER_ACCOUNT_LIST_PATH = "/v2/sub-user/account-list";
-  public static final String SUBUSER_TRANSFERABILITY_PATH = "/v2/sub-user/transferability";
-  public static final String SUBUSER_TRADABLE_MARKET_PATH = "/v2/sub-user/tradable-market";
-  public static final String SUBUSER_APIKEY_GENERATION_PATH = "/v2/sub-user/api-key-generation";
-  public static final String SUBUSER_APIKEY_MODIFICATION_PATH = "/v2/sub-user/api-key-modification";
-  public static final String SUBUSER_APIKEY_DELETION_PATH = "/v2/sub-user/api-key-deletion";
-  public static final String GET_SUBUSER_APIKEY_PATH = "/v2/user/api-key";
-  public static final String GET_SUBUSER_DEPOSIT_ADDRESS_PATH = "/v2/sub-user/deposit-address";
-  public static final String GET_SUBUSER_DEPOSIT_PATH = "/v2/sub-user/query-deposit";
+    public static final String SUBUSER_CREATION_PATH = "/v2/sub-user/creation";
+    public static final String GET_SUBUSER_LIST_PATH = "/v2/sub-user/user-list";
+    public static final String GET_SUBUSER_STATE_PATH = "/v2/sub-user/user-state";
+    public static final String SUBUSER_MANAGEMENT_PATH = "/v2/sub-user/management";
+    public static final String GET_SUBUSER_ACCOUNT_LIST_PATH = "/v2/sub-user/account-list";
+    public static final String SUBUSER_TRANSFERABILITY_PATH = "/v2/sub-user/transferability";
+    public static final String SUBUSER_TRADABLE_MARKET_PATH = "/v2/sub-user/tradable-market";
+    public static final String SUBUSER_APIKEY_GENERATION_PATH = "/v2/sub-user/api-key-generation";
+    public static final String SUBUSER_APIKEY_MODIFICATION_PATH = "/v2/sub-user/api-key-modification";
+    public static final String SUBUSER_APIKEY_DELETION_PATH = "/v2/sub-user/api-key-deletion";
+    public static final String GET_SUBUSER_APIKEY_PATH = "/v2/user/api-key";
+    public static final String GET_SUBUSER_DEPOSIT_ADDRESS_PATH = "/v2/sub-user/deposit-address";
+    public static final String GET_SUBUSER_DEPOSIT_PATH = "/v2/sub-user/query-deposit";
 
+    private Options options;
 
-  private Options options;
+    private HuobiRestConnection restConnection;
 
-  private HuobiRestConnection restConnection;
+    public HuobiSubUserService(Options options) {
+        this.options = options;
+        this.restConnection = new HuobiRestConnection(options);
+    }
 
-  public HuobiSubUserService(Options options) {
-    this.options = options;
-    this.restConnection = new HuobiRestConnection(options);
-  }
+    @Override
+    public List<SubUserCreationInfo> subuserCreation(SubUserCreationRequest request) {
 
-  @Override
-  public List<SubUserCreationInfo> subuserCreation(SubUserCreationRequest request) {
+        InputChecker checker = InputChecker.checker().checkList(request.getUserList(), 1, 50, "userList");
+        request.getUserList().forEach(param -> {
+            checker.shouldNotNull(param.getUserName(), "userName");
+        });
 
-    InputChecker checker = InputChecker.checker().checkList(request.getUserList(), 1, 50, "userList");
-    request.getUserList().forEach(param -> {
-      checker.shouldNotNull(param.getUserName(), "userName");
-    });
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToPost("userList", request.getUserList());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToPost("userList", request.getUserList());
+        JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_CREATION_PATH, builder);
+        JSONArray jsonArray = jsonObject.getJSONArray("data");
+        return new SubUserCreationInfoParser().parseArray(jsonArray);
+    }
 
-    JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_CREATION_PATH, builder);
-    JSONArray jsonArray = jsonObject.getJSONArray("data");
-    return new SubUserCreationInfoParser().parseArray(jsonArray);
-  }
+    @Override
+    public GetSubUserListResult getSubUserList(GetSubUserListRequest request) {
 
-  @Override
-  public GetSubUserListResult getSubUserList(GetSubUserListRequest request) {
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToUrl("fromId", request.getFromId());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToUrl("fromId", request.getFromId());
+        JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_LIST_PATH, builder);
+        return new GetSubUserListResultParser().parse(jsonObject);
+    }
 
-    JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_LIST_PATH, builder);
-    return new GetSubUserListResultParser().parse(jsonObject);
-  }
+    public SubUserState getSubuserState(Long subUid) {
 
-  public SubUserState getSubuserState(Long subUid) {
+        InputChecker.checker().shouldNotNull(subUid, "subUid");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToUrl("subUid", subUid);
 
-    InputChecker.checker().shouldNotNull(subUid, "subUid");
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToUrl("subUid", subUid);
+        JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_STATE_PATH, builder);
+        JSONObject data = jsonObject.getJSONObject("data");
+        return new SubUserStateParser().parse(data);
+    }
 
-    JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_STATE_PATH, builder);
-    JSONObject data = jsonObject.getJSONObject("data");
-    return new SubUserStateParser().parse(data);
-  }
+    public SubUserManagementResult subuserManagement(SubUserManagementRequest request) {
 
-  public SubUserManagementResult subuserManagement(SubUserManagementRequest request) {
+        InputChecker.checker().shouldNotNull(request.getSubUid(), "subUid").shouldNotNull(request.getAction(),
+                "action");
 
-    InputChecker.checker()
-        .shouldNotNull(request.getSubUid(), "subUid")
-        .shouldNotNull(request.getAction(), "action");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToPost("subUid", request.getSubUid()).putToPost("action",
+                request.getAction().getAction());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToPost("subUid", request.getSubUid())
-        .putToPost("action", request.getAction().getAction());
+        JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_MANAGEMENT_PATH, builder);
+        JSONObject data = jsonObject.getJSONObject("data");
+        return new SubUserManagementResultParser().parse(data);
+    }
 
-    JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_MANAGEMENT_PATH, builder);
-    JSONObject data = jsonObject.getJSONObject("data");
-    return new SubUserManagementResultParser().parse(data);
-  }
+    public GetSubUserAccountListResult getSubuserAccountList(GetSubUserAccountListRequest request) {
+        InputChecker.checker().shouldNotNull(request.getSubUid(), "subUid");
 
-  public GetSubUserAccountListResult getSubuserAccountList(GetSubUserAccountListRequest request) {
-    InputChecker.checker()
-        .shouldNotNull(request.getSubUid(), "subUid");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToUrl("subUid", request.getSubUid());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToUrl("subUid", request.getSubUid());
+        JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_ACCOUNT_LIST_PATH, builder);
+        JSONObject data = jsonObject.getJSONObject("data");
+        return new GetSubUserAccountListResultParser().parse(data);
+    }
 
-    JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_ACCOUNT_LIST_PATH, builder);
-    JSONObject data = jsonObject.getJSONObject("data");
-    return new GetSubUserAccountListResultParser().parse(data);
-  }
+    public SubUserTransferabilityResult subuserTransferability(SubUserTransferabilityRequest request) {
+        InputChecker.checker().shouldNotNull(request.getSubUids(), "subUids").shouldNotNull(request.getTransferrable(),
+                "transferrable");
 
-  public SubUserTransferabilityResult subuserTransferability(SubUserTransferabilityRequest request) {
-    InputChecker.checker()
-        .shouldNotNull(request.getSubUids(), "subUids")
-        .shouldNotNull(request.getTransferrable(), "transferrable");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToPost("subUids", request.getSubUids())
+                .putToPost("accountType", request.getAccountType().getAccountType())
+                .putToPost("transferrable", request.getTransferrable());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToPost("subUids", request.getSubUids())
-        .putToPost("accountType", request.getAccountType().getAccountType())
-        .putToPost("transferrable", request.getTransferrable());
+        JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_TRANSFERABILITY_PATH, builder);
+        return new SubUserTransferabilityResultParser().parse(jsonObject);
+    }
 
-    JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_TRANSFERABILITY_PATH, builder);
-    return new SubUserTransferabilityResultParser().parse(jsonObject);
-  }
+    public SubUserTradableMarketResult subuserTradableMarket(SubUserTradableMarketRequest request) {
+        InputChecker.checker().shouldNotNull(request.getSubUids(), "subUids")
+                .shouldNotNull(request.getAccountType(), "accountType")
+                .shouldNotNull(request.getActivation(), "activation");
 
-  public SubUserTradableMarketResult subuserTradableMarket(SubUserTradableMarketRequest request) {
-    InputChecker.checker()
-        .shouldNotNull(request.getSubUids(), "subUids")
-        .shouldNotNull(request.getAccountType(), "accountType")
-        .shouldNotNull(request.getActivation(), "activation");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToPost("subUids", request.getSubUids())
+                .putToPost("accountType", request.getAccountType().getAccountType())
+                .putToPost("activation", request.getActivation().getActivation());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToPost("subUids", request.getSubUids())
-        .putToPost("accountType", request.getAccountType().getAccountType())
-        .putToPost("activation", request.getActivation().getActivation());
+        JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_TRADABLE_MARKET_PATH, builder);
+        return new SubUserTradableMarketResultParser().parse(jsonObject);
+    }
 
-    JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_TRADABLE_MARKET_PATH, builder);
-    return new SubUserTradableMarketResultParser().parse(jsonObject);
-  }
+    public SubUserApiKeyGenerationResult subuserApiKeyGeneration(SubUserApiKeyGenerationRequest request) {
+        InputChecker.checker().shouldNotNull(request.getOtpToken(), "otpToken")
+                .shouldNotNull(request.getSubUid(), "subUid").shouldNotNull(request.getNote(), "note")
+                .shouldNotNull(request.getPermission(), "permission");
 
-  public SubUserApiKeyGenerationResult subuserApiKeyGeneration(SubUserApiKeyGenerationRequest request) {
-    InputChecker.checker()
-        .shouldNotNull(request.getOtpToken(), "otpToken")
-        .shouldNotNull(request.getSubUid(), "subUid")
-        .shouldNotNull(request.getNote(), "note")
-        .shouldNotNull(request.getPermission(), "permission");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToPost("otpToken", request.getOtpToken())
+                .putToPost("subUid", request.getSubUid()).putToPost("note", request.getNote())
+                .putToPost("permission", request.getPermission()).putToPost("ipAddresses", request.getIpAddresses());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToPost("otpToken", request.getOtpToken())
-        .putToPost("subUid", request.getSubUid())
-        .putToPost("note", request.getNote())
-        .putToPost("permission", request.getPermission())
-        .putToPost("ipAddresses", request.getIpAddresses());
+        JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_APIKEY_GENERATION_PATH, builder);
+        JSONObject data = jsonObject.getJSONObject("data");
+        return new SubUserApiKeyGenerationResultParser().parse(data);
+    }
 
-    JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_APIKEY_GENERATION_PATH, builder);
-    JSONObject data = jsonObject.getJSONObject("data");
-    return new SubUserApiKeyGenerationResultParser().parse(data);
-  }
+    public SubUserApiKeyModificationResult subuserApiKeyModification(SubUserApiKeyModificationRequest request) {
+        InputChecker.checker().shouldNotNull(request.getAccessKey(), "accessKey").shouldNotNull(request.getSubUid(),
+                "subUid");
 
-  public SubUserApiKeyModificationResult subuserApiKeyModification(SubUserApiKeyModificationRequest request) {
-    InputChecker.checker()
-        .shouldNotNull(request.getAccessKey(), "accessKey")
-        .shouldNotNull(request.getSubUid(), "subUid");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToPost("accessKey", request.getAccessKey())
+                .putToPost("subUid", request.getSubUid()).putToPost("note", request.getNote())
+                .putToPost("permission", request.getPermission()).putToPost("ipAddresses", request.getIpAddresses());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToPost("accessKey", request.getAccessKey())
-        .putToPost("subUid", request.getSubUid())
-        .putToPost("note", request.getNote())
-        .putToPost("permission", request.getPermission())
-        .putToPost("ipAddresses", request.getIpAddresses());
+        JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_APIKEY_MODIFICATION_PATH, builder);
+        JSONObject data = jsonObject.getJSONObject("data");
+        return new SubUserApiKeyModificationResultParser().parse(data);
+    }
 
-    JSONObject jsonObject = restConnection.executePostWithSignature(SUBUSER_APIKEY_MODIFICATION_PATH, builder);
-    JSONObject data = jsonObject.getJSONObject("data");
-    return new SubUserApiKeyModificationResultParser().parse(data);
-  }
+    @Override
+    public void subuserApiKeyDeletion(SubUserApiKeyDeletionRequest request) {
+        InputChecker.checker().shouldNotNull(request.getAccessKey(), "accessKey").shouldNotNull(request.getSubUid(),
+                "subUid");
 
-  @Override
-  public void subuserApiKeyDeletion(SubUserApiKeyDeletionRequest request) {
-    InputChecker.checker()
-        .shouldNotNull(request.getAccessKey(), "accessKey")
-        .shouldNotNull(request.getSubUid(), "subUid");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToPost("accessKey", request.getAccessKey())
+                .putToPost("subUid", request.getSubUid());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToPost("accessKey", request.getAccessKey())
-        .putToPost("subUid", request.getSubUid());
+        restConnection.executePostWithSignature(SUBUSER_APIKEY_DELETION_PATH, builder);
+    }
 
-    restConnection.executePostWithSignature(SUBUSER_APIKEY_DELETION_PATH, builder);
-  }
+    public GetApiKeyListResult getApiKeyList(GetApiKeyListRequest request) {
+        InputChecker.checker().shouldNotNull(request.getUid(), "uid");
 
-  public GetApiKeyListResult getApiKeyList(GetApiKeyListRequest request) {
-    InputChecker.checker()
-        .shouldNotNull(request.getUid(), "uid");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToUrl("uid", request.getUid()).putToUrl("accessKey",
+                request.getAccessKey());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToUrl("uid", request.getUid())
-        .putToUrl("accessKey", request.getAccessKey());
+        JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_APIKEY_PATH, builder);
+        return new GetApiKeyListResultParser().parse(jsonObject);
+    }
 
-    JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_APIKEY_PATH, builder);
-    return new GetApiKeyListResultParser().parse(jsonObject);
-  }
+    @Override
+    public List<DepositAddress> getSubUserDepositAddress(Long subUid, String currency) {
 
-  @Override
-  public List<DepositAddress> getSubUserDepositAddress(Long subUid, String currency) {
+        InputChecker.checker().shouldNotNull(subUid, "subUid").checkCurrency(currency);
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToUrl("subUid", subUid).putToUrl("currency", currency);
 
-    InputChecker.checker()
-        .shouldNotNull(subUid, "subUid")
-        .checkCurrency(currency);
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToUrl("subUid", subUid)
-        .putToUrl("currency", currency);
+        JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_DEPOSIT_ADDRESS_PATH, builder);
 
-    JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_DEPOSIT_ADDRESS_PATH, builder);
+        JSONArray array = jsonObject.getJSONArray("data");
+        return new DepositAddressParser().parseArray(array);
+    }
 
-    JSONArray array = jsonObject.getJSONArray("data");
-    return new DepositAddressParser().parseArray(array);
-  }
+    public GetSubUserDepositResult getSubUserDeposit(GetSubUserDepositRequest request) {
 
-  public GetSubUserDepositResult getSubUserDeposit(GetSubUserDepositRequest request) {
+        InputChecker.checker().shouldNotNull(request.getSubUid(), "subUid");
 
-    InputChecker.checker()
-        .shouldNotNull(request.getSubUid(), "subUid");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToUrl("subUid", request.getSubUid())
+                .putToUrl("currency", request.getCurrency()).putToUrl("startTime", request.getStartTime())
+                .putToUrl("endTime", request.getEndTime())
+                .putToUrl("sort", request.getSort() == null ? null : request.getSort().getSort())
+                .putToUrl("limit", request.getLimit()).putToUrl("fromId", request.getFromId());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToUrl("subUid", request.getSubUid())
-        .putToUrl("currency", request.getCurrency())
-        .putToUrl("startTime", request.getStartTime())
-        .putToUrl("endTime", request.getEndTime())
-        .putToUrl("sort", request.getSort() == null ? null : request.getSort().getSort())
-        .putToUrl("limit", request.getLimit())
-        .putToUrl("fromId", request.getFromId());
+        JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_DEPOSIT_PATH, builder);
+        return new GetSubUserDepositResultParser().parse(jsonObject);
+    }
 
-    JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_DEPOSIT_PATH, builder);
-    return new GetSubUserDepositResultParser().parse(jsonObject);
-  }
+    @Override
+    public long transferSubuser(TransferSubuserRequest request) {
 
-  @Override
-  public long transferSubuser(TransferSubuserRequest request) {
+        InputChecker.checker().shouldNotNull(request.getSubUid(), "sub-uid")
+                .shouldNotNull(request.getCurrency(), "currency").shouldNotNull(request.getAmount(), "amount")
+                .shouldNotNull(request.getType(), "type");
 
-    InputChecker.checker()
-        .shouldNotNull(request.getSubUid(), "sub-uid")
-        .shouldNotNull(request.getCurrency(), "currency")
-        .shouldNotNull(request.getAmount(), "amount")
-        .shouldNotNull(request.getType(), "type");
+        UrlParamsBuilder builder = UrlParamsBuilder.build().putToPost("sub-uid", request.getSubUid())
+                .putToPost("currency", request.getCurrency()).putToPost("amount", request.getAmount().toPlainString())
+                .putToPost("type", request.getType().getCode());
 
-    UrlParamsBuilder builder = UrlParamsBuilder.build()
-        .putToPost("sub-uid", request.getSubUid())
-        .putToPost("currency", request.getCurrency())
-        .putToPost("amount", request.getAmount().toPlainString())
-        .putToPost("type", request.getType().getCode());
+        JSONObject jsonObject = restConnection.executePostWithSignature(TRANSFER_SUBUSER_PATH, builder);
+        return jsonObject.getLong("data");
+    }
 
-    JSONObject jsonObject = restConnection.executePostWithSignature(TRANSFER_SUBUSER_PATH, builder);
-    return jsonObject.getLong("data");
-  }
+    @Override
+    public List<AccountBalance> getSubuserAccountBalance(Long subuserId) {
 
-  @Override
-  public List<AccountBalance> getSubuserAccountBalance(Long subuserId) {
+        InputChecker.checker().shouldNotNull(subuserId, "sub-uid");
 
-    InputChecker.checker()
-        .shouldNotNull(subuserId, "sub-uid");
+        String path = GET_SUBUSER_ACCOUNT_BALANCE_PATH.replace("{sub-uid}", subuserId + "");
+        JSONObject jsonObject = restConnection.executeGetWithSignature(path, UrlParamsBuilder.build());
+        JSONArray data = jsonObject.getJSONArray("data");
+        return new AccountBalanceParser().parseArray(data);
+    }
 
-    String path = GET_SUBUSER_ACCOUNT_BALANCE_PATH.replace("{sub-uid}", subuserId + "");
-    JSONObject jsonObject = restConnection.executeGetWithSignature(path, UrlParamsBuilder.build());
-    JSONArray data = jsonObject.getJSONArray("data");
-    return new AccountBalanceParser().parseArray(data);
-  }
+    @Override
+    public List<SubuserAggregateBalance> getSubuserAggregateBalance() {
 
-  @Override
-  public List<SubuserAggregateBalance> getSubuserAggregateBalance() {
+        JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_AGGREGATE_BALANCE_PATH,
+                UrlParamsBuilder.build());
+        JSONArray data = jsonObject.getJSONArray("data");
+        return new SubuserAggregateBalanceParser().parseArray(data);
 
-    JSONObject jsonObject = restConnection.executeGetWithSignature(GET_SUBUSER_AGGREGATE_BALANCE_PATH, UrlParamsBuilder.build());
-    JSONArray data = jsonObject.getJSONArray("data");
-    return new SubuserAggregateBalanceParser().parseArray(data);
-
-  }
+    }
 
 }

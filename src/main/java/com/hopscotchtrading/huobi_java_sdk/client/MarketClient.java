@@ -45,51 +45,51 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.HuobiMarketService;
 
 public interface MarketClient {
 
-  List<Candlestick> getCandlestick(CandlestickRequest request);
+    List<Candlestick> getCandlestick(CandlestickRequest request);
 
-  MarketDetailMerged getMarketDetailMerged(MarketDetailMergedRequest request);
+    MarketDetailMerged getMarketDetailMerged(MarketDetailMergedRequest request);
 
-  MarketDetail getMarketDetail(MarketDetailRequest request);
+    MarketDetail getMarketDetail(MarketDetailRequest request);
 
-  List<MarketTicker> getTickers();
+    List<MarketTicker> getTickers();
 
-  MarketDepth getMarketDepth(MarketDepthRequest request);
+    MarketDepth getMarketDepth(MarketDepthRequest request);
 
-  List<MarketTrade> getMarketTrade(MarketTradeRequest request);
+    List<MarketTrade> getMarketTrade(MarketTradeRequest request);
 
-  List<MarketTrade> getMarketHistoryTrade(MarketHistoryTradeRequest request);
+    List<MarketTrade> getMarketHistoryTrade(MarketHistoryTradeRequest request);
 
-  void subCandlestick(SubCandlestickRequest request, ResponseCallback<CandlestickEvent> callback);
+    void subCandlestick(SubCandlestickRequest request, ResponseCallback<CandlestickEvent> callback);
 
-  void subMarketDetail(SubMarketDetailRequest request, ResponseCallback<MarketDetailEvent> callback);
+    void subMarketDetail(SubMarketDetailRequest request, ResponseCallback<MarketDetailEvent> callback);
 
-  void subMarketDepth(SubMarketDepthRequest request, ResponseCallback<MarketDepthEvent> callback);
+    void subMarketDepth(SubMarketDepthRequest request, ResponseCallback<MarketDepthEvent> callback);
 
-  void subMarketTrade(SubMarketTradeRequest request, ResponseCallback<MarketTradeEvent> callback);
+    void subMarketTrade(SubMarketTradeRequest request, ResponseCallback<MarketTradeEvent> callback);
 
-  void subMarketBBO(SubMarketBBORequest request, ResponseCallback<MarketBBOEvent> callback);
+    void subMarketBBO(SubMarketBBORequest request, ResponseCallback<MarketBBOEvent> callback);
 
-  void subMbpRefreshUpdate(SubMbpRefreshUpdateRequest request, ResponseCallback<MbpRefreshUpdateEvent> callback);
+    void subMbpRefreshUpdate(SubMbpRefreshUpdateRequest request, ResponseCallback<MbpRefreshUpdateEvent> callback);
 
-  WebSocketConnection subMbpIncrementalUpdate(SubMbpIncrementalUpdateRequest request, ResponseCallback<MbpIncrementalUpdateEvent> callback);
+    WebSocketConnection subMbpIncrementalUpdate(SubMbpIncrementalUpdateRequest request,
+            ResponseCallback<MbpIncrementalUpdateEvent> callback);
 
-  WebSocketConnection reqMbpIncrementalUpdate(SubMbpIncrementalUpdateRequest request, WebSocketConnection connection);
+    WebSocketConnection reqMbpIncrementalUpdate(SubMbpIncrementalUpdateRequest request, WebSocketConnection connection);
 
-  void reqCandlestick(ReqCandlestickRequest request, ResponseCallback<CandlestickReq> callback);
+    void reqCandlestick(ReqCandlestickRequest request, ResponseCallback<CandlestickReq> callback);
 
-  void reqMarketDepth(ReqMarketDepthRequest request, ResponseCallback<MarketDepthReq> callback);
+    void reqMarketDepth(ReqMarketDepthRequest request, ResponseCallback<MarketDepthReq> callback);
 
-  void reqMarketTrade(ReqMarketTradeRequest request, ResponseCallback<MarketTradeReq> callback);
+    void reqMarketTrade(ReqMarketTradeRequest request, ResponseCallback<MarketTradeReq> callback);
 
-  void reqMarketDetail(ReqMarketDetailRequest request, ResponseCallback<MarketDetailReq> callback);
+    void reqMarketDetail(ReqMarketDetailRequest request, ResponseCallback<MarketDetailReq> callback);
 
-  static MarketClient create(Options options) {
+    static MarketClient create(Options options) {
 
-    if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
-      return new HuobiMarketService(options);
+        if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
+            return new HuobiMarketService(options);
+        }
+        throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
     }
-    throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
-  }
-
 
 }

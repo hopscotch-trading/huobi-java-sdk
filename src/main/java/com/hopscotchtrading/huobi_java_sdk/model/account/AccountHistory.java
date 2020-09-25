@@ -13,22 +13,22 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountHistory {
 
-  private Long accountId;
+    private Long accountId;
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal transactAmt;
+    private BigDecimal transactAmt;
 
-  private String transactType;
+    private String transactType;
 
-  private BigDecimal availBalance;
+    private BigDecimal availBalance;
 
-  private BigDecimal acctBalance;
+    private BigDecimal acctBalance;
 
-  private Long transactTime;
+    private Long transactTime;
 
-  private Long recordId;
+    private Long recordId;
 
-  private Long nextId;
+    private Long nextId;
 
 }

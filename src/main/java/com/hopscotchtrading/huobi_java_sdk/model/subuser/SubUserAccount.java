@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserAccount {
 
-  private Long accountId;
+    private Long accountId;
 
-  private String subType;
+    private String subType;
 
-  private String accountStatus;
+    private String accountStatus;
 
 }

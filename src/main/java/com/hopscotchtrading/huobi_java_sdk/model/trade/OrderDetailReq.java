@@ -13,10 +13,10 @@ import lombok.ToString;
 @ToString
 public class OrderDetailReq {
 
-  private String topic;
+    private String topic;
 
-  private Long ts;
+    private Long ts;
 
-  private Order order;
+    private Order order;
 
 }

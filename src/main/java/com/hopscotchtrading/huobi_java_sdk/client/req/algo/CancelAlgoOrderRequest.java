@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CancelAlgoOrderRequest {
 
-  private List<String> clientOrderIds;
+    private List<String> clientOrderIds;
 
 }

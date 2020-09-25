@@ -8,20 +8,20 @@ import lombok.Getter;
 @Getter
 public enum BalanceModeEnum {
 
-  /**
-   * Subscribe available balance
-   */
-  AVAILABLE("0"),
+    /**
+     * Subscribe available balance
+     */
+    AVAILABLE("0"),
 
-  /**
-   * Subscribe TOTAL balance, total balance is the sum of available and frozen
-   */
-  TOTAL("1");
+    /**
+     * Subscribe TOTAL balance, total balance is the sum of available and frozen
+     */
+    TOTAL("1");
 
-  private final String code;
+    private final String code;
 
-  BalanceModeEnum(String code) {
-    this.code = code;
-  }
+    BalanceModeEnum(String code) {
+        this.code = code;
+    }
 
 }

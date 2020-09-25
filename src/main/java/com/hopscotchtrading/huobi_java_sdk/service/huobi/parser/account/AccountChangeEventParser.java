@@ -10,26 +10,22 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class AccountChangeEventParser implements HuobiModelParser<AccountChangeEvent> {
 
-  @Override
-  public AccountChangeEvent parse(JSONObject json) {
+    @Override
+    public AccountChangeEvent parse(JSONObject json) {
 
-    JSONObject data = json.getJSONObject("data");
+        JSONObject data = json.getJSONObject("data");
 
+        return AccountChangeEvent.builder().event(data.getString("event"))
+                .list(new AccountChangeParser().parseArray(data.getJSONArray("list"))).build();
+    }
 
-    return AccountChangeEvent.builder()
-        .event(data.getString("event"))
-        .list(new AccountChangeParser().parseArray(data.getJSONArray("list")))
-        .build();
-  }
+    @Override
+    public AccountChangeEvent parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public AccountChangeEvent parse(JSONArray json) {
-    return null;
-  }
-
-
-  @Override
-  public List<AccountChangeEvent> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<AccountChangeEvent> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

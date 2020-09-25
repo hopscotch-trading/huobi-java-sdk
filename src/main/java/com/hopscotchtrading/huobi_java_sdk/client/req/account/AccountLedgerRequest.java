@@ -16,28 +16,28 @@ import org.apache.commons.lang.StringUtils;
 @NoArgsConstructor
 public class AccountLedgerRequest {
 
-  private Long accountId;
+    private Long accountId;
 
-  private String currency;
+    private String currency;
 
-  private List<AccountLedgerTransactTypeEnum> types;
+    private List<AccountLedgerTransactTypeEnum> types;
 
-  private Long startTime;
+    private Long startTime;
 
-  private Long endTime;
+    private Long endTime;
 
-  private QuerySortEnum sort;
+    private QuerySortEnum sort;
 
-  private Integer limit;
+    private Integer limit;
 
-  private Long fromId;
+    private Long fromId;
 
-  public String getTypesString(){
-    String typeString = null;
-    if (this.getTypes() != null && this.getTypes().size() > 0) {
-      typeString = StringUtils.join(types,",");
+    public String getTypesString() {
+        String typeString = null;
+        if (this.getTypes() != null && this.getTypes().size() > 0) {
+            typeString = StringUtils.join(types, ",");
+        }
+        return typeString;
     }
-    return typeString;
-  }
 
 }

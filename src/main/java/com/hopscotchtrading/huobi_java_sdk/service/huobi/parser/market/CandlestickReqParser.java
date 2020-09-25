@@ -11,25 +11,22 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.utils.DataUtils;
 
 public class CandlestickReqParser implements HuobiModelParser<CandlestickReq> {
 
-  @Override
-  public CandlestickReq parse(JSONObject json) {
+    @Override
+    public CandlestickReq parse(JSONObject json) {
 
-    String dataKey = DataUtils.getDataKey(json);
+        String dataKey = DataUtils.getDataKey(json);
 
-    return CandlestickReq.builder()
-        .ch(json.getString("ch"))
-        .ts(json.getLong("ts"))
-        .candlestickList(new CandlestickParser().parseArray(json.getJSONArray(dataKey)))
-        .build();
-  }
+        return CandlestickReq.builder().ch(json.getString("ch")).ts(json.getLong("ts"))
+                .candlestickList(new CandlestickParser().parseArray(json.getJSONArray(dataKey))).build();
+    }
 
-  @Override
-  public CandlestickReq parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public CandlestickReq parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<CandlestickReq> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<CandlestickReq> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

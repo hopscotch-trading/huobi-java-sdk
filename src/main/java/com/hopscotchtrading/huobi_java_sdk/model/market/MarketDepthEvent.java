@@ -13,9 +13,9 @@ import lombok.ToString;
 @ToString
 public class MarketDepthEvent {
 
-  private String ch;
+    private String ch;
 
-  private Long ts;
+    private Long ts;
 
-  private MarketDepth depth;
+    private MarketDepth depth;
 }

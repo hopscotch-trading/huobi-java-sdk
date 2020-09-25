@@ -16,26 +16,26 @@ import lombok.ToString;
 @ToString
 public class MarketDetailMerged {
 
-  private Long id;
+    private Long id;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private Long count;
+    private Long count;
 
-  private BigDecimal open;
+    private BigDecimal open;
 
-  private BigDecimal close;
+    private BigDecimal close;
 
-  private BigDecimal low;
+    private BigDecimal low;
 
-  private BigDecimal high;
+    private BigDecimal high;
 
-  private BigDecimal vol;
+    private BigDecimal vol;
 
-  @JSONField(deserialize = false)
-  private PriceLevel bid;
+    @JSONField(deserialize = false)
+    private PriceLevel bid;
 
-  @JSONField(deserialize = false)
-  private PriceLevel ask;
+    @JSONField(deserialize = false)
+    private PriceLevel ask;
 
 }

@@ -9,8 +9,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum OrderSideEnum {
-  BUY("buy"),
-  SELL("sell");
+    BUY("buy"), SELL("sell");
 
-  private final String code;
+    private final String code;
 }

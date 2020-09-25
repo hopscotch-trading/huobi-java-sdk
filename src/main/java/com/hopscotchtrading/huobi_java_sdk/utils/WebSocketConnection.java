@@ -4,15 +4,15 @@ import com.hopscotchtrading.huobi_java_sdk.constant.enums.ConnectionStateEnum;
 
 public interface WebSocketConnection {
 
-  ConnectionStateEnum getState();
+    ConnectionStateEnum getState();
 
-  Long getConnectionId();
+    Long getConnectionId();
 
-  void reConnect();
+    void reConnect();
 
-  void reConnect(int delayInSecond);
+    void reConnect(int delayInSecond);
 
-  long getLastReceivedTime();
+    long getLastReceivedTime();
 
-  void send(String str);
+    void send(String str);
 }

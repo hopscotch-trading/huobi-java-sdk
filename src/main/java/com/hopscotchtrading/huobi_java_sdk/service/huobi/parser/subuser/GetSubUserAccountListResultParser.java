@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class GetSubUserAccountListResultParser implements HuobiModelParser<GetSubUserAccountListResult> {
 
-  @Override
-  public GetSubUserAccountListResult parse(JSONObject json) {
-    return json.toJavaObject(GetSubUserAccountListResult.class);
-  }
+    @Override
+    public GetSubUserAccountListResult parse(JSONObject json) {
+        return json.toJavaObject(GetSubUserAccountListResult.class);
+    }
 
-  @Override
-  public GetSubUserAccountListResult parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public GetSubUserAccountListResult parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<GetSubUserAccountListResult> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<GetSubUserAccountListResult> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

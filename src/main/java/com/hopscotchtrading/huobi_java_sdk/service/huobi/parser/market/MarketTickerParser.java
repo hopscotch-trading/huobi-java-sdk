@@ -11,22 +11,22 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class MarketTickerParser implements HuobiModelParser<MarketTicker> {
 
-  @Override
-  public MarketTicker parse(JSONObject json) {
-    return json.toJavaObject(MarketTicker.class);
-  }
-
-  @Override
-  public MarketTicker parse(JSONArray json) {
-    return null;
-  }
-
-  @Override
-  public List<MarketTicker> parseArray(JSONArray jsonArray) {
-    if (jsonArray == null || jsonArray.size() <= 0) {
-      return new ArrayList<>();
+    @Override
+    public MarketTicker parse(JSONObject json) {
+        return json.toJavaObject(MarketTicker.class);
     }
 
-    return jsonArray.toJavaList(MarketTicker.class);
-  }
+    @Override
+    public MarketTicker parse(JSONArray json) {
+        return null;
+    }
+
+    @Override
+    public List<MarketTicker> parseArray(JSONArray jsonArray) {
+        if (jsonArray == null || jsonArray.size() <= 0) {
+            return new ArrayList<>();
+        }
+
+        return jsonArray.toJavaList(MarketTicker.class);
+    }
 }

@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserTradableMarketState {
 
-  private Long subUid;
+    private Long subUid;
 
-  private String accountType;
+    private String accountType;
 
-  private String activation;
+    private String activation;
 
-  private String errCode;
+    private String errCode;
 
-  private String errMessage;
+    private String errMessage;
 
 }

@@ -11,23 +11,23 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class FeeRateParser implements HuobiModelParser<FeeRate> {
 
-  @Override
-  public FeeRate parse(JSONObject json) {
-    return json.toJavaObject(FeeRate.class);
-  }
-
-  @Override
-  public FeeRate parse(JSONArray json) {
-    return null;
-  }
-
-  @Override
-  public List<FeeRate> parseArray(JSONArray jsonArray) {
-
-    if (jsonArray == null || jsonArray.size() <= 0) {
-      return new ArrayList<>();
+    @Override
+    public FeeRate parse(JSONObject json) {
+        return json.toJavaObject(FeeRate.class);
     }
 
-    return jsonArray.toJavaList(FeeRate.class);
-  }
+    @Override
+    public FeeRate parse(JSONArray json) {
+        return null;
+    }
+
+    @Override
+    public List<FeeRate> parseArray(JSONArray jsonArray) {
+
+        if (jsonArray == null || jsonArray.size() <= 0) {
+            return new ArrayList<>();
+        }
+
+        return jsonArray.toJavaList(FeeRate.class);
+    }
 }

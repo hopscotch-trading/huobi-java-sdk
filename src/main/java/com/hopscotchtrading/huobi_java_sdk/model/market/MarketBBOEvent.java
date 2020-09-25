@@ -13,9 +13,9 @@ import lombok.ToString;
 @ToString
 public class MarketBBOEvent {
 
-  private String ch;
+    private String ch;
 
-  private Long ts;
+    private Long ts;
 
-  private MarketBBO bbo;
+    private MarketBBO bbo;
 }

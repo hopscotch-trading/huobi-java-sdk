@@ -13,12 +13,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserAccountInfo {
 
-  private String accountType;
+    private String accountType;
 
-  private String activation;
+    private String activation;
 
-  private Boolean transferrable;
+    private Boolean transferrable;
 
-  private List<SubUserAccount> accountIds;
+    private List<SubUserAccount> accountIds;
 
 }

@@ -18,20 +18,20 @@ import com.hopscotchtrading.huobi_java_sdk.model.account.Balance;
 @ToString
 public class IsolatedMarginAccount {
 
-  private Long id;
+    private Long id;
 
-  private String symbol;
+    private String symbol;
 
-  private BigDecimal flPrice;
+    private BigDecimal flPrice;
 
-  private String flType;
+    private String flType;
 
-  private BigDecimal riskRate;
+    private BigDecimal riskRate;
 
-  private String type;
+    private String type;
 
-  private String state;
+    private String state;
 
-  private List<Balance> balanceList;
+    private List<Balance> balanceList;
 
 }

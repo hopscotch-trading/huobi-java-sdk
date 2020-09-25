@@ -9,22 +9,17 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum OrderStateEnum {
-  SUBMITTED("submitted"),
-  CREATED("created"),
-  PARTIALFILLED("partial-filled"),
-  CANCELLING("cancelling"),
-  PARTIALCANCELED("partial-canceled"),
-  FILLED("filled"),
-  CANCELED("canceled");
+    SUBMITTED("submitted"), CREATED("created"), PARTIALFILLED("partial-filled"), CANCELLING("cancelling"),
+    PARTIALCANCELED("partial-canceled"), FILLED("filled"), CANCELED("canceled");
 
-  private final String code;
+    private final String code;
 
-  public static OrderStateEnum find(String code) {
-    for (OrderStateEnum stateEnum : OrderStateEnum.values()) {
-      if (stateEnum.getCode().equals(code)) {
-        return stateEnum;
-      }
+    public static OrderStateEnum find(String code) {
+        for (OrderStateEnum stateEnum : OrderStateEnum.values()) {
+            if (stateEnum.getCode().equals(code)) {
+                return stateEnum;
+            }
+        }
+        return null;
     }
-    return null;
-  }
 }

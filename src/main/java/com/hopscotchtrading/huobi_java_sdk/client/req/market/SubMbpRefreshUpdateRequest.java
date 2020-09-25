@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubMbpRefreshUpdateRequest {
 
-  private String symbols;
+    private String symbols;
 
-  private DepthLevels levels;
+    private DepthLevels levels;
 
 }

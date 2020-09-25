@@ -11,21 +11,21 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class SubUserStateParser implements HuobiModelParser<SubUserState> {
 
-  @Override
-  public SubUserState parse(JSONObject json) {
-    return json.toJavaObject(SubUserState.class);
-  }
-
-  @Override
-  public SubUserState parse(JSONArray json) {
-    return null;
-  }
-
-  @Override
-  public List<SubUserState> parseArray(JSONArray jsonArray) {
-    if (jsonArray == null || jsonArray.isEmpty()) {
-      return new ArrayList<>();
+    @Override
+    public SubUserState parse(JSONObject json) {
+        return json.toJavaObject(SubUserState.class);
     }
-    return jsonArray.toJavaList(SubUserState.class);
-  }
+
+    @Override
+    public SubUserState parse(JSONArray json) {
+        return null;
+    }
+
+    @Override
+    public List<SubUserState> parseArray(JSONArray jsonArray) {
+        if (jsonArray == null || jsonArray.isEmpty()) {
+            return new ArrayList<>();
+        }
+        return jsonArray.toJavaList(SubUserState.class);
+    }
 }

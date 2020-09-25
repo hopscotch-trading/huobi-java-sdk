@@ -15,11 +15,11 @@ import lombok.ToString;
 @ToString
 public class Point {
 
-  Long accountId;
+    Long accountId;
 
-  String accountStatus;
+    String accountStatus;
 
-  String acctBalance;
+    String acctBalance;
 
-  List<Group> groupIds;
+    List<Group> groupIds;
 }

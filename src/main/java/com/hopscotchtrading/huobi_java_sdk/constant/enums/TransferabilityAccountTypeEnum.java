@@ -7,9 +7,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum TransferabilityAccountTypeEnum {
 
-  SPOT("spot"),
-  ;
+    SPOT("spot"),;
 
-  private final String accountType;
+    private final String accountType;
 
 }

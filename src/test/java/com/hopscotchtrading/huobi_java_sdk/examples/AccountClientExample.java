@@ -31,87 +31,69 @@ import com.hopscotchtrading.huobi_java_sdk.model.account.PointTransferResult;
 
 public class AccountClientExample {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    Long accountId = 123L;
-    AccountClient accountService = AccountClient.create(HuobiOptions.builder()
-        .apiKey(Constants.API_KEY)
-        .secretKey(Constants.SECRET_KEY)
-        .build());
+        Long accountId = 123L;
+        AccountClient accountService = AccountClient
+                .create(HuobiOptions.builder().apiKey(Constants.API_KEY).secretKey(Constants.SECRET_KEY).build());
 
-    List<Account> accountList = accountService.getAccounts();
-    accountList.forEach(account -> {
-      System.out.println(account.toString());
-    });
+        List<Account> accountList = accountService.getAccounts();
+        accountList.forEach(account -> {
+            System.out.println(account.toString());
+        });
 
+        AccountBalance accountBalance = accountService
+                .getAccountBalance(AccountBalanceRequest.builder().accountId(accountId).build());
 
-    AccountBalance accountBalance = accountService.getAccountBalance(AccountBalanceRequest.builder()
-        .accountId(accountId)
-        .build());
+        System.out.println(accountBalance.getId());
+        System.out.println(accountBalance.getType());
+        System.out.println(accountBalance.getState());
+        accountBalance.getList().forEach(balance -> {
+            System.out.println(balance.toString());
+        });
 
-    System.out.println(accountBalance.getId());
-    System.out.println(accountBalance.getType());
-    System.out.println(accountBalance.getState());
-    accountBalance.getList().forEach(balance -> {
-      System.out.println(balance.toString());
-    });
+        List<AccountHistory> historyList = accountService
+                .getAccountHistory(AccountHistoryRequest.builder().accountId(accountId).build());
+        historyList.forEach(history -> {
+            System.out.println(history);
+        });
 
-    List<AccountHistory> historyList = accountService.getAccountHistory(AccountHistoryRequest.builder().accountId(accountId).build());
-    historyList.forEach(history->{
-      System.out.println(history);
-    });
+        AccountLedgerResult accountLedgerResult = accountService
+                .getAccountLedger(AccountLedgerRequest.builder().accountId(accountId).limit(2).build());
+        System.out.println("leger nextId: " + accountLedgerResult.getNextId());
+        accountLedgerResult.getLedgerList().forEach(ledger -> {
+            System.out.println(ledger);
+        });
 
-    AccountLedgerResult accountLedgerResult = accountService.getAccountLedger(AccountLedgerRequest.builder()
-        .accountId(accountId)
-        .limit(2)
-        .build());
-    System.out.println("leger nextId: " + accountLedgerResult.getNextId());
-    accountLedgerResult.getLedgerList().forEach(ledger -> {
-      System.out.println(ledger);
-    });
+        accountService.subAccountsUpdate(
+                SubAccountUpdateRequest.builder().accountUpdateMode(AccountUpdateModeEnum.ACCOUNT_CHANGE).build(),
+                event -> {
+                    System.out.println(event.toString());
+                });
 
+        AccountTransferResult accountTransferResult = accountService.accountTransfer(AccountTransferRequest.builder()
+                .fromUser(123L).fromAccount(456L).fromAccountType(AccountTransferAccountTypeEnum.SPOT).toUser(678L)
+                .toAccount(789L).toAccountType(AccountTransferAccountTypeEnum.MARGIN).currency("usdt")
+                .amount(new BigDecimal("10")).build());
 
-    accountService.subAccountsUpdate(SubAccountUpdateRequest.builder()
-        .accountUpdateMode(AccountUpdateModeEnum.ACCOUNT_CHANGE).build(), event -> {
-      System.out.println(event.toString());
-    });
+        System.out.println("account transfer result:" + accountTransferResult.toString());
 
+        AccountFuturesTransferResult accountFuturesTransferResult = accountService
+                .accountFuturesTransfer(AccountFuturesTransferRequest.builder().currency("xrp")
+                        .amount(new BigDecimal("5")).type(AccountFuturesTransferTypeEnum.PRO_TO_FUTURES).build());
 
-    AccountTransferResult accountTransferResult = accountService.accountTransfer(AccountTransferRequest.builder()
-        .fromUser(123L)
-        .fromAccount(456L)
-        .fromAccountType(AccountTransferAccountTypeEnum.SPOT)
-        .toUser(678L)
-        .toAccount(789L)
-        .toAccountType(AccountTransferAccountTypeEnum.MARGIN)
-        .currency("usdt")
-        .amount(new BigDecimal("10"))
-        .build());
+        System.out.println("account futures result:" + accountFuturesTransferResult.toString());
 
-    System.out.println("account transfer result:"+accountTransferResult.toString());
+        Point point = accountService.getPoint(PointRequest.builder().build());
+        System.out.println("get point: " + point);
 
-    AccountFuturesTransferResult accountFuturesTransferResult = accountService.accountFuturesTransfer(AccountFuturesTransferRequest.builder()
-        .currency("xrp")
-        .amount(new BigDecimal("5"))
-        .type(AccountFuturesTransferTypeEnum.PRO_TO_FUTURES)
-        .build());
+        PointTransferResult pointTransferResult = accountService.pointTransfer(
+                PointTransferRequest.builder().fromUid(123L).toUid(123L).groupId(123L).amount(BigDecimal.ONE).build());
+        System.out.println(pointTransferResult);
 
-    System.out.println("account futures result:"+accountFuturesTransferResult.toString());
-
-    Point point = accountService.getPoint(PointRequest.builder().build());
-    System.out.println("get point: " + point);
-
-
-    PointTransferResult pointTransferResult = accountService.pointTransfer(PointTransferRequest.builder()
-      .fromUid(123L)
-      .toUid(123L)
-      .groupId(123L)
-      .amount(BigDecimal.ONE)
-      .build());
-    System.out.println(pointTransferResult);
-
-    AccountAssetValuationResult accountAssetValuationResult = accountService.accountAssetValuation(AccountAssetValuationRequest.builder().accountType(AccountTypeEnum.SPOT).build());
-    System.out.println(accountAssetValuationResult);
-  }
+        AccountAssetValuationResult accountAssetValuationResult = accountService.accountAssetValuation(
+                AccountAssetValuationRequest.builder().accountType(AccountTypeEnum.SPOT).build());
+        System.out.println(accountAssetValuationResult);
+    }
 
 }

@@ -13,10 +13,10 @@ import lombok.ToString;
 @ToString
 public class ETFSwapListRequest {
 
-  private String etfName;
+    private String etfName;
 
-  private Integer offset;
+    private Integer offset;
 
-  private Integer limit;
+    private Integer limit;
 
 }

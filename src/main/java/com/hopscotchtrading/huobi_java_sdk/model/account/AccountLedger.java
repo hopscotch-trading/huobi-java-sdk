@@ -13,45 +13,45 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountLedger {
 
-	/**
-	 * Account ID
-	 */
-	private Long accountId;
+    /**
+     * Account ID
+     */
+    private Long accountId;
 
-	/**
-	 * Currency
-	 */
-	private String currency;
+    /**
+     * Currency
+     */
+    private String currency;
 
-	/**
-	 * Amount change (positive value if income, negative value if outcome)
-	 */
-	private BigDecimal transactAmt;
+    /**
+     * Amount change (positive value if income, negative value if outcome)
+     */
+    private BigDecimal transactAmt;
 
-	/**
-	 * Amount change types
-	 */
-	private String transactType;
+    /**
+     * Amount change types
+     */
+    private String transactType;
 
-	private String transferType;
-	/**
-	 * transaction Id
-	 */
-	private Long transactId;
+    private String transferType;
+    /**
+     * transaction Id
+     */
+    private Long transactId;
 
-	/**
-	 * Acccount transferred from
-	 */
-	private Long transferer;
+    /**
+     * Acccount transferred from
+     */
+    private Long transferer;
 
-	/**
-	 * Acccount transferred to
-	 */
-	private Long transferee;
+    /**
+     * Acccount transferred to
+     */
+    private Long transferee;
 
-	/**
-	 * Transaction time (database time)
-	 */
-	private Long transactTime;
+    /**
+     * Transaction time (database time)
+     */
+    private Long transactTime;
 
 }

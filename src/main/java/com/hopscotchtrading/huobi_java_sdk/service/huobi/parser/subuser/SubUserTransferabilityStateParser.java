@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class SubUserTransferabilityStateParser implements HuobiModelParser<SubUserTransferabilityState> {
 
-  @Override
-  public SubUserTransferabilityState parse(JSONObject json) {
-    return null;
-  }
+    @Override
+    public SubUserTransferabilityState parse(JSONObject json) {
+        return null;
+    }
 
-  @Override
-  public SubUserTransferabilityState parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public SubUserTransferabilityState parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<SubUserTransferabilityState> parseArray(JSONArray jsonArray) {
-    return jsonArray.toJavaList(SubUserTransferabilityState.class);
-  }
+    @Override
+    public List<SubUserTransferabilityState> parseArray(JSONArray jsonArray) {
+        return jsonArray.toJavaList(SubUserTransferabilityState.class);
+    }
 }

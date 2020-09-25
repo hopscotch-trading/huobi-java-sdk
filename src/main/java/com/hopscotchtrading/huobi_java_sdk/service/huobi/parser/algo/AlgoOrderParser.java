@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class AlgoOrderParser implements HuobiModelParser<AlgoOrder> {
 
-  @Override
-  public AlgoOrder parse(JSONObject json) {
-    return json.toJavaObject(AlgoOrder.class);
-  }
+    @Override
+    public AlgoOrder parse(JSONObject json) {
+        return json.toJavaObject(AlgoOrder.class);
+    }
 
-  @Override
-  public AlgoOrder parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public AlgoOrder parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<AlgoOrder> parseArray(JSONArray jsonArray) {
-    return jsonArray.toJavaList(AlgoOrder.class);
-  }
+    @Override
+    public List<AlgoOrder> parseArray(JSONArray jsonArray) {
+        return jsonArray.toJavaList(AlgoOrder.class);
+    }
 }

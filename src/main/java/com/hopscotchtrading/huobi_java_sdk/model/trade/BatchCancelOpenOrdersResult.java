@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BatchCancelOpenOrdersResult {
 
-  private Integer successCount;
+    private Integer successCount;
 
-  private Integer failedCount;
+    private Integer failedCount;
 
-  private Long nextId;
+    private Long nextId;
 
 }

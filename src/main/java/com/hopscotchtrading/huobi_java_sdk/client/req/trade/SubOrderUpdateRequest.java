@@ -13,6 +13,6 @@ import lombok.ToString;
 @ToString
 public class SubOrderUpdateRequest {
 
-  private String symbols;
+    private String symbols;
 
 }

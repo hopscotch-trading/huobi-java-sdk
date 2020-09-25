@@ -15,12 +15,12 @@ import lombok.ToString;
 @ToString
 public class MarketDepth {
 
-  private long version;
+    private long version;
 
-  private Long ts;
+    private Long ts;
 
-  private List<PriceLevel> bids;
+    private List<PriceLevel> bids;
 
-  private List<PriceLevel> asks;
+    private List<PriceLevel> asks;
 
 }

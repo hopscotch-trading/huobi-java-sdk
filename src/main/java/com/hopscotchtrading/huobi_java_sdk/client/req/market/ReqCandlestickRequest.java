@@ -14,12 +14,12 @@ import lombok.ToString;
 @ToString
 public class ReqCandlestickRequest {
 
-  private String symbol;
+    private String symbol;
 
-  private CandlestickIntervalEnum interval;
+    private CandlestickIntervalEnum interval;
 
-  private Long from;
+    private Long from;
 
-  private Long to;
+    private Long to;
 
 }

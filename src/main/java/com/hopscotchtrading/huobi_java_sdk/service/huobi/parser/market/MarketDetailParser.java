@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class MarketDetailParser implements HuobiModelParser<MarketDetail> {
 
-  @Override
-  public MarketDetail parse(JSONObject json) {
-    return json.toJavaObject(MarketDetail.class);
-  }
+    @Override
+    public MarketDetail parse(JSONObject json) {
+        return json.toJavaObject(MarketDetail.class);
+    }
 
-  @Override
-  public MarketDetail parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public MarketDetail parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<MarketDetail> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<MarketDetail> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

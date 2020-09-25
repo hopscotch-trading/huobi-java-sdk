@@ -15,10 +15,10 @@ import lombok.ToString;
 @ToString
 public class CurrencyChain {
 
-  private String currency;
+    private String currency;
 
-  private String instStatus;
+    private String instStatus;
 
-  private List<Chain> chains;
+    private List<Chain> chains;
 
 }

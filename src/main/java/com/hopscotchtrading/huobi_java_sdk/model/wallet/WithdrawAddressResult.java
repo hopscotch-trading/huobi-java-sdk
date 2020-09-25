@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class WithdrawAddressResult {
 
-  private Long nextId;
+    private Long nextId;
 
-  private List<WithdrawAddress> withdrawAddressList;
+    private List<WithdrawAddress> withdrawAddressList;
 
 }

@@ -15,27 +15,26 @@ import lombok.ToString;
 @ToString
 public class OrderUpdate {
 
+    private Long orderId;
 
-  private Long orderId;
+    private String clientOrderId;
 
-  private String clientOrderId;
+    private Long matchId;
 
-  private Long matchId;
+    private String symbol;
 
-  private String symbol;
+    private BigDecimal price;
 
-  private BigDecimal price;
+    private BigDecimal unfilledAmount;
 
-  private BigDecimal unfilledAmount;
+    private BigDecimal filledAmount;
 
-  private BigDecimal filledAmount;
+    private BigDecimal filledCashAmount;
 
-  private BigDecimal filledCashAmount;
+    private String orderType;
 
-  private String orderType;
+    private String orderState;
 
-  private String orderState;
-
-  private String role;
+    private String role;
 
 }

@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserManagementRequest {
 
-  private Long subUid;
+    private Long subUid;
 
-  private SubUserManagementActionEnum action;
+    private SubUserManagementActionEnum action;
 
 }

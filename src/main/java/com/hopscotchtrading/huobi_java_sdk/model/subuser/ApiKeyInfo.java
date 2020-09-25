@@ -11,19 +11,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ApiKeyInfo {
 
-  private String accessKey;
+    private String accessKey;
 
-  private String note;
+    private String note;
 
-  private String permission;
+    private String permission;
 
-  private String ipAddresses;
+    private String ipAddresses;
 
-  private Integer validDays;
+    private Integer validDays;
 
-  private String status;
+    private String status;
 
-  private Long createTime;
+    private Long createTime;
 
-  private Long updateTime;
+    private Long updateTime;
 }

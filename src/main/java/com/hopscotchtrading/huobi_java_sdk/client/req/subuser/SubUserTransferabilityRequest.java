@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserTransferabilityRequest {
 
-  private String subUids;
+    private String subUids;
 
-  private TransferabilityAccountTypeEnum accountType;
+    private TransferabilityAccountTypeEnum accountType;
 
-  private String transferrable;
+    private String transferrable;
 
 }

@@ -13,14 +13,14 @@ import lombok.ToString;
 @ToString
 public class MarketStatus {
 
-  private Integer marketStatus;
+    private Integer marketStatus;
 
-  private Long haltStartTime;
+    private Long haltStartTime;
 
-  private Long haltEndTime;
+    private Long haltEndTime;
 
-  private Integer haltReason;
+    private Integer haltReason;
 
-  private String affectedSymbols;
+    private String affectedSymbols;
 
 }

@@ -15,16 +15,16 @@ import lombok.ToString;
 @ToString
 public class MarketBBO {
 
-  private String symbol;
+    private String symbol;
 
-  private Long quoteTime;
+    private Long quoteTime;
 
-  private BigDecimal bid;
+    private BigDecimal bid;
 
-  private BigDecimal bidSize;
+    private BigDecimal bidSize;
 
-  private BigDecimal ask;
+    private BigDecimal ask;
 
-  private BigDecimal askSize;
+    private BigDecimal askSize;
 
 }

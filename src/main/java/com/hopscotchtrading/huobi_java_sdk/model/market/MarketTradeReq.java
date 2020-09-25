@@ -15,7 +15,7 @@ import lombok.ToString;
 @ToString
 public class MarketTradeReq {
 
-  private String ch;
+    private String ch;
 
-  private List<MarketTrade> list;
+    private List<MarketTrade> list;
 }

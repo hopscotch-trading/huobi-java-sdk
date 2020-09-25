@@ -4,16 +4,16 @@ import com.hopscotchtrading.huobi_java_sdk.constant.enums.ExchangeEnum;
 
 public interface Options {
 
-  String getApiKey();
+    String getApiKey();
 
-  String getSecretKey();
+    String getSecretKey();
 
-  ExchangeEnum getExchange();
+    ExchangeEnum getExchange();
 
-  String getRestHost();
+    String getRestHost();
 
-  String getWebSocketHost();
+    String getWebSocketHost();
 
-  boolean isWebSocketAutoConnect();
+    boolean isWebSocketAutoConnect();
 
 }

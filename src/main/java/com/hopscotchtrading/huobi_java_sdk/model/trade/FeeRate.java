@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
 @Data
 @Builder
 @AllArgsConstructor
@@ -16,14 +15,14 @@ import lombok.ToString;
 @ToString
 public class FeeRate {
 
-  private String symbol;
+    private String symbol;
 
-  private BigDecimal makerFeeRate;
+    private BigDecimal makerFeeRate;
 
-  private BigDecimal takerFeeRate;
+    private BigDecimal takerFeeRate;
 
-  private BigDecimal actualMakerRate;
+    private BigDecimal actualMakerRate;
 
-  private BigDecimal actualTakerRate;
+    private BigDecimal actualTakerRate;
 
 }

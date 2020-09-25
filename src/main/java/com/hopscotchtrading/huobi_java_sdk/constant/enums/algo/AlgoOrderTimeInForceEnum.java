@@ -7,10 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum AlgoOrderTimeInForceEnum {
 
-  GTC("gtc"),
-  BOC("boc"),
-  IOC("ioc"),
-  FOK("fok"),
-  ;
-  private final String timeInForce;
+    GTC("gtc"), BOC("boc"), IOC("ioc"), FOK("fok"),;
+
+    private final String timeInForce;
 }

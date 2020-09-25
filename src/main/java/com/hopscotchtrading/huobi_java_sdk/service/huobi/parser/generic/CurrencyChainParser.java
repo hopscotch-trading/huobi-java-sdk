@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class CurrencyChainParser implements HuobiModelParser<CurrencyChain> {
 
-  @Override
-  public CurrencyChain parse(JSONObject json) {
-    return json.toJavaObject(CurrencyChain.class);
-  }
+    @Override
+    public CurrencyChain parse(JSONObject json) {
+        return json.toJavaObject(CurrencyChain.class);
+    }
 
-  @Override
-  public CurrencyChain parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public CurrencyChain parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<CurrencyChain> parseArray(JSONArray jsonArray) {
-    return jsonArray.toJavaList(CurrencyChain.class);
-  }
+    @Override
+    public List<CurrencyChain> parseArray(JSONArray jsonArray) {
+        return jsonArray.toJavaList(CurrencyChain.class);
+    }
 }

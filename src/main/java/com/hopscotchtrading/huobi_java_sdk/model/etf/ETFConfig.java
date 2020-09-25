@@ -18,13 +18,13 @@ import com.hopscotchtrading.huobi_java_sdk.constant.enums.EtfStatusEnum;
 @ToString
 public class ETFConfig {
 
-  private int purchaseMinAmount;
-  private int purchaseMaxAmount;
-  private int redemptionMinAmount;
-  private int redemptionMaxAmount;
-  private BigDecimal purchaseFeeRate;
-  private BigDecimal redemptionFeeRate;
-  private EtfStatusEnum status;
-  private List<ETFUnitPrice> unitPriceList;
+    private int purchaseMinAmount;
+    private int purchaseMaxAmount;
+    private int redemptionMinAmount;
+    private int redemptionMaxAmount;
+    private BigDecimal purchaseFeeRate;
+    private BigDecimal redemptionFeeRate;
+    private EtfStatusEnum status;
+    private List<ETFUnitPrice> unitPriceList;
 
 }

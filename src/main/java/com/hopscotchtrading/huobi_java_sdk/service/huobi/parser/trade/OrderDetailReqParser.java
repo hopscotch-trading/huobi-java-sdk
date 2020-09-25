@@ -10,22 +10,19 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class OrderDetailReqParser implements HuobiModelParser<OrderDetailReq> {
 
-  @Override
-  public OrderDetailReq parse(JSONObject json) {
-    return OrderDetailReq.builder()
-        .topic(json.getString("topic"))
-        .ts(json.getLong("ts"))
-        .order(new OrderParser().parse(json.getJSONObject("data")))
-        .build();
-  }
+    @Override
+    public OrderDetailReq parse(JSONObject json) {
+        return OrderDetailReq.builder().topic(json.getString("topic")).ts(json.getLong("ts"))
+                .order(new OrderParser().parse(json.getJSONObject("data"))).build();
+    }
 
-  @Override
-  public OrderDetailReq parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public OrderDetailReq parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<OrderDetailReq> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<OrderDetailReq> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

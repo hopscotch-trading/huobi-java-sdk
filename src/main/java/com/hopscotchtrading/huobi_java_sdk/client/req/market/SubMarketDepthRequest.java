@@ -13,8 +13,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class SubMarketDepthRequest {
-  private String symbol;
+    private String symbol;
 
-  private DepthStepEnum step;
+    private DepthStepEnum step;
 
 }

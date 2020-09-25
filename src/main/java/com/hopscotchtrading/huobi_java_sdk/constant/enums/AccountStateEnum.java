@@ -7,22 +7,21 @@ import lombok.Getter;
  */
 @Getter
 public enum AccountStateEnum {
-  WORKING("working"),
-  LOCK("lock");
+    WORKING("working"), LOCK("lock");
 
-  private final String code;
+    private final String code;
 
-  AccountStateEnum(String code) {
-    this.code = code;
-  }
-
-  public static AccountStateEnum find(String code) {
-    for (AccountStateEnum stateEnum : AccountStateEnum.values()) {
-      if (stateEnum.getCode().equals(code)) {
-        return stateEnum;
-      }
+    AccountStateEnum(String code) {
+        this.code = code;
     }
-    return null;
-  }
+
+    public static AccountStateEnum find(String code) {
+        for (AccountStateEnum stateEnum : AccountStateEnum.values()) {
+            if (stateEnum.getCode().equals(code)) {
+                return stateEnum;
+            }
+        }
+        return null;
+    }
 
 }

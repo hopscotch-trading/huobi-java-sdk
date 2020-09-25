@@ -7,22 +7,20 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum DealRoleEnum {
 
-  /**
-   * TAKER,MAKER
-   */
+    /**
+     * TAKER,MAKER
+     */
 
-  TAKER("taker"),
-  MAKER("maker")
-  ;
+    TAKER("taker"), MAKER("maker");
 
-  private final String role;
+    private final String role;
 
-  public static DealRoleEnum find(String role) {
-    for (DealRoleEnum fr : DealRoleEnum.values()) {
-      if (fr.getRole().equals(role)) {
-        return fr;
-      }
+    public static DealRoleEnum find(String role) {
+        for (DealRoleEnum fr : DealRoleEnum.values()) {
+            if (fr.getRole().equals(role)) {
+                return fr;
+            }
+        }
+        return null;
     }
-    return null;
-  }
 }

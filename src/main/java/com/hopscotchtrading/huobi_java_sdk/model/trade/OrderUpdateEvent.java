@@ -13,10 +13,10 @@ import lombok.ToString;
 @ToString
 public class OrderUpdateEvent {
 
-  private String topic;
+    private String topic;
 
-  private Long ts;
+    private Long ts;
 
-  private OrderUpdate update;
+    private OrderUpdate update;
 
 }

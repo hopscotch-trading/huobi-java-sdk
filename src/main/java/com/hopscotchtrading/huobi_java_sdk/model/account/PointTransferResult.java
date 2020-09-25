@@ -13,8 +13,8 @@ import lombok.ToString;
 @ToString
 public class PointTransferResult {
 
-  String transactId;
+    String transactId;
 
-  Long transactTime;
+    Long transactTime;
 
 }

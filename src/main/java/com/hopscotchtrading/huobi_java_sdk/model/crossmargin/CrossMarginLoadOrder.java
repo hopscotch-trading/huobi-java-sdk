@@ -15,30 +15,30 @@ import lombok.ToString;
 @ToString
 public class CrossMarginLoadOrder {
 
-  private Long id;
+    private Long id;
 
-  private Long userId;
+    private Long userId;
 
-  private Long accountId;
+    private Long accountId;
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal loanAmount;
+    private BigDecimal loanAmount;
 
-  private BigDecimal loanBalance;
+    private BigDecimal loanBalance;
 
-  private BigDecimal interestAmount;
+    private BigDecimal interestAmount;
 
-  private BigDecimal interestBalance;
+    private BigDecimal interestBalance;
 
-  private BigDecimal filledPoints;
+    private BigDecimal filledPoints;
 
-  private BigDecimal filledHt;
+    private BigDecimal filledHt;
 
-  private String state;
+    private String state;
 
-  private Long createdAt;
+    private Long createdAt;
 
-  private Long accruedAt;
+    private Long accruedAt;
 
 }

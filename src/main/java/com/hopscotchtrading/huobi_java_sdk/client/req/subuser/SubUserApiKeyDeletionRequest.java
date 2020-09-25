@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserApiKeyDeletionRequest {
 
-  private Long subUid;
+    private Long subUid;
 
-  private String accessKey;
+    private String accessKey;
 }

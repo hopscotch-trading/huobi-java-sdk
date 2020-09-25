@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class WithdrawAddressRequest {
 
-  private String currency;
+    private String currency;
 
-  private String chain;
+    private String chain;
 
-  private String note;
+    private String note;
 
-  private Integer limit;
+    private Integer limit;
 
-  private Long fromId;
+    private Long fromId;
 
 }

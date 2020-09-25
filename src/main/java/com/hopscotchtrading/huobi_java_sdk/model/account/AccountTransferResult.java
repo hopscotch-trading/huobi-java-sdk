@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountTransferResult {
 
-  private Long transactId;
+    private Long transactId;
 
-  private Long transactTime;
+    private Long transactTime;
 
 }

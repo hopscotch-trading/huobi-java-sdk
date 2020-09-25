@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserCreationParam {
 
-  private String userName;
+    private String userName;
 
-  private String note;
+    private String note;
 
 }

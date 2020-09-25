@@ -16,26 +16,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateAlgoOrderRequest {
 
-  private String clientOrderId;
+    private String clientOrderId;
 
-  private Long accountId;
+    private Long accountId;
 
-  private String symbol;
+    private String symbol;
 
-  private AlgoOrderSideEnum orderSide;
+    private AlgoOrderSideEnum orderSide;
 
-  private AlgoOrderTypeEnum orderType;
+    private AlgoOrderTypeEnum orderType;
 
-  private AlgoOrderTimeInForceEnum timeInForce;
+    private AlgoOrderTimeInForceEnum timeInForce;
 
-  private BigDecimal orderPrice;
+    private BigDecimal orderPrice;
 
-  private BigDecimal orderSize;
+    private BigDecimal orderSize;
 
-  private BigDecimal orderValue;
+    private BigDecimal orderValue;
 
-  private BigDecimal stopPrice;
+    private BigDecimal stopPrice;
 
-  private BigDecimal trailingRate;
+    private BigDecimal trailingRate;
 
 }

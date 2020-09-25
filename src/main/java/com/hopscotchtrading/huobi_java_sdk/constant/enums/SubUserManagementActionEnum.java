@@ -5,11 +5,11 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum  SubUserManagementActionEnum {
+public enum SubUserManagementActionEnum {
 
-  LOCK("lock"),
-  UNLOCK("unlock"),
+    LOCK("lock"), UNLOCK("unlock"),
 
-  ;
-  private String action;
+    ;
+
+    private String action;
 }

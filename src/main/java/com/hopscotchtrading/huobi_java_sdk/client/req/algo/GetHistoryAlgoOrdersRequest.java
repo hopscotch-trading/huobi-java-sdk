@@ -15,25 +15,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetHistoryAlgoOrdersRequest {
 
-  private Long accountId;
+    private Long accountId;
 
-  private String symbol;
+    private String symbol;
 
-  private AlgoOrderSideEnum orderSide;
+    private AlgoOrderSideEnum orderSide;
 
-  private AlgoOrderTypeEnum orderType;
+    private AlgoOrderTypeEnum orderType;
 
-  private AlgoOrderStatusEnum orderStatus;
+    private AlgoOrderStatusEnum orderStatus;
 
-  private Long startTime;
+    private Long startTime;
 
-  private Long endTime;
+    private Long endTime;
 
-  private QuerySortEnum sort;
+    private QuerySortEnum sort;
 
-  private Integer limit;
+    private Integer limit;
 
-  private Long fromId;
-
+    private Long fromId;
 
 }

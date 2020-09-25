@@ -1,6 +1,5 @@
 package com.hopscotchtrading.huobi_java_sdk.client.req.account;
 
-
 import java.math.BigDecimal;
 
 import lombok.AllArgsConstructor;
@@ -8,19 +7,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class PointTransferRequest {
 
-  private Long fromUid;
+    private Long fromUid;
 
-  private Long toUid;
+    private Long toUid;
 
-  private Long groupId;
+    private Long groupId;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
 }

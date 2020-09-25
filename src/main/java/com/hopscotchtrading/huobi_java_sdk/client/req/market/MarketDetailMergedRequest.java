@@ -13,6 +13,6 @@ import lombok.ToString;
 @ToString
 public class MarketDetailMergedRequest {
 
-  private String symbol;
+    private String symbol;
 
 }

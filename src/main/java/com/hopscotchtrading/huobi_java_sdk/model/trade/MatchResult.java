@@ -15,33 +15,32 @@ import lombok.ToString;
 @ToString
 public class MatchResult {
 
-  private Long id;
+    private Long id;
 
-  private Long orderId;
+    private Long orderId;
 
-  private Long matchId;
+    private Long matchId;
 
-  private String symbol;
+    private String symbol;
 
-  private String type;
+    private String type;
 
-  private String source;
+    private String source;
 
-  private BigDecimal price;
+    private BigDecimal price;
 
-  private BigDecimal filledAmount;
+    private BigDecimal filledAmount;
 
-  private BigDecimal filledFees;
+    private BigDecimal filledFees;
 
-  private String role;
+    private String role;
 
-  private BigDecimal filledPoints;
+    private BigDecimal filledPoints;
 
-  private String feeDeductCurrency;
+    private String feeDeductCurrency;
 
-  private long createdAt;
+    private long createdAt;
 
-  private String feeCurrency;
-
+    private String feeCurrency;
 
 }

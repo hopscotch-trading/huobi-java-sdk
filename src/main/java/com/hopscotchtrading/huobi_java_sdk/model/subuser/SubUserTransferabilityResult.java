@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserTransferabilityResult {
 
-  private List<SubUserTransferabilityState> list;
+    private List<SubUserTransferabilityState> list;
 
 }

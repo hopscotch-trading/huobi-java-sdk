@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateAlgoOrderResult {
 
-  private String clientOrderId;
+    private String clientOrderId;
 
 }

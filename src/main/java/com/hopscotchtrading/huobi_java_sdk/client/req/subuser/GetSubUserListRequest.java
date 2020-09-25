@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetSubUserListRequest {
 
-  private Long fromId;
+    private Long fromId;
 
 }

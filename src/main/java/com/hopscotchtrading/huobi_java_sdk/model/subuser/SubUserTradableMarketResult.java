@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserTradableMarketResult {
 
-  private List<SubUserTradableMarketState> list;
+    private List<SubUserTradableMarketState> list;
 
 }

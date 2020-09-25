@@ -1,6 +1,5 @@
 package com.hopscotchtrading.huobi_java_sdk.client.req.account;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PointRequest {
 
-  Long subUid;
+    Long subUid;
 
 }

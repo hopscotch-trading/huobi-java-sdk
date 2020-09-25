@@ -12,10 +12,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class MarketDetailReq {
-  private String ch;
+    private String ch;
 
-  private Long ts;
+    private Long ts;
 
-  private MarketDetail detail;
+    private MarketDetail detail;
 
 }

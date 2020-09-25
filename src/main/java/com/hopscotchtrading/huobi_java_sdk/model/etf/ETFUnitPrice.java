@@ -15,7 +15,7 @@ import lombok.ToString;
 @ToString
 public class ETFUnitPrice {
 
-  private String currency;
-  private BigDecimal amount;
+    private String currency;
+    private BigDecimal amount;
 
 }

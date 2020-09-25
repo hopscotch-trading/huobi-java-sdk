@@ -9,18 +9,17 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum TradeDirectionEnum {
-  BUY("buy"),
-  SELL("sell");
+    BUY("buy"), SELL("sell");
 
-  private final String code;
+    private final String code;
 
-  public static TradeDirectionEnum find(String code) {
-    for (TradeDirectionEnum directionEnum : TradeDirectionEnum.values()) {
-      if (directionEnum.getCode().equals(code)) {
-        return directionEnum;
-      }
+    public static TradeDirectionEnum find(String code) {
+        for (TradeDirectionEnum directionEnum : TradeDirectionEnum.values()) {
+            if (directionEnum.getCode().equals(code)) {
+                return directionEnum;
+            }
+        }
+        return null;
     }
-    return null;
-  }
 
 }

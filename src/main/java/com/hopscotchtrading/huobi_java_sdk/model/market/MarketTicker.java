@@ -15,28 +15,28 @@ import lombok.ToString;
 @ToString
 public class MarketTicker {
 
-  private String symbol;
+    private String symbol;
 
-  private BigDecimal open;
+    private BigDecimal open;
 
-  private BigDecimal close;
+    private BigDecimal close;
 
-  private BigDecimal low;
+    private BigDecimal low;
 
-  private BigDecimal high;
+    private BigDecimal high;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private Long count;
+    private Long count;
 
-  private BigDecimal vol;
+    private BigDecimal vol;
 
-  private BigDecimal bid;
+    private BigDecimal bid;
 
-  private BigDecimal bidSize;
+    private BigDecimal bidSize;
 
-  private BigDecimal ask;
+    private BigDecimal ask;
 
-  private BigDecimal askSize;
+    private BigDecimal askSize;
 
 }

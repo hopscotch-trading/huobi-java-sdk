@@ -14,6 +14,6 @@ import lombok.ToString;
 @ToString
 public class SubAccountChangeRequest {
 
-  private BalanceModeEnum balanceMode;
+    private BalanceModeEnum balanceMode;
 
 }

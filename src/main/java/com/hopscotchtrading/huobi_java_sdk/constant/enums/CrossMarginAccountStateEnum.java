@@ -7,23 +7,20 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum CrossMarginAccountStateEnum {
 
-  WORKING("working"),
-  FL_SYS("fl-sys"),
-  FL_END("fl-end"),
-  FL_NEGATIVE("fl-negative")
+    WORKING("working"), FL_SYS("fl-sys"), FL_END("fl-end"), FL_NEGATIVE("fl-negative")
 
-  ;
+    ;
 
-  private String code;
+    private String code;
 
-  public static CrossMarginAccountStateEnum find(String code) {
+    public static CrossMarginAccountStateEnum find(String code) {
 
-    for (CrossMarginAccountStateEnum stateEnum : CrossMarginAccountStateEnum.values()) {
-      if (stateEnum.getCode().equals(code)) {
-        return stateEnum;
-      }
+        for (CrossMarginAccountStateEnum stateEnum : CrossMarginAccountStateEnum.values()) {
+            if (stateEnum.getCode().equals(code)) {
+                return stateEnum;
+            }
+        }
+        return null;
     }
-    return null;
-  }
 
 }

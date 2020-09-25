@@ -15,8 +15,8 @@ import lombok.ToString;
 @ToString
 public class IsolatedMarginRepayLoanRequest {
 
-  private Long orderId;
+    private Long orderId;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
 }

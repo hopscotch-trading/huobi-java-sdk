@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserCreationRequest {
 
-  private List<SubUserCreationParam> userList;
+    private List<SubUserCreationParam> userList;
 
 }

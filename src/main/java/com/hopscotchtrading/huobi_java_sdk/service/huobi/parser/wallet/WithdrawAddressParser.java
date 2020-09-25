@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class WithdrawAddressParser implements HuobiModelParser<WithdrawAddress> {
 
-  @Override
-  public WithdrawAddress parse(JSONObject json) {
-    return null;
-  }
+    @Override
+    public WithdrawAddress parse(JSONObject json) {
+        return null;
+    }
 
-  @Override
-  public WithdrawAddress parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public WithdrawAddress parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<WithdrawAddress> parseArray(JSONArray jsonArray) {
-    return jsonArray.toJavaList(WithdrawAddress.class);
-  }
+    @Override
+    public List<WithdrawAddress> parseArray(JSONArray jsonArray) {
+        return jsonArray.toJavaList(WithdrawAddress.class);
+    }
 }

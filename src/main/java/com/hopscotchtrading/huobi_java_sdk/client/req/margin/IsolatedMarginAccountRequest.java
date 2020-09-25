@@ -13,8 +13,8 @@ import lombok.ToString;
 @ToString
 public class IsolatedMarginAccountRequest {
 
-  private String symbol;
+    private String symbol;
 
-  private Long subUid;
+    private Long subUid;
 
 }

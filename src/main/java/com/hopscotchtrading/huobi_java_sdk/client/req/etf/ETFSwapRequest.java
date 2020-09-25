@@ -16,10 +16,10 @@ import lombok.ToString;
 @ToString
 public class ETFSwapRequest {
 
-  private EtfSwapDirectionEnum direction;
+    private EtfSwapDirectionEnum direction;
 
-  private String etfName;
+    private String etfName;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
 }

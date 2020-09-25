@@ -5,40 +5,39 @@ import com.alibaba.fastjson.JSONObject;
 
 public class DataUtils {
 
-  public static String getDataKey(JSONObject jsonObject) {
-    String key = "data";
-    Object dataObj = jsonObject.get(key);
-    if (dataObj == null) {
-      key = "tick";
-      dataObj = jsonObject.get("tick");
+    public static String getDataKey(JSONObject jsonObject) {
+        String key = "data";
+        Object dataObj = jsonObject.get(key);
+        if (dataObj == null) {
+            key = "tick";
+            dataObj = jsonObject.get("tick");
+        }
+
+        if (dataObj == null) {
+            return null;
+        }
+        return key;
     }
 
-    if (dataObj == null) {
-      return null;
+    public static boolean isJSONArray(Object object) {
+        if (object instanceof JSONArray) {
+            return true;
+        }
+        return false;
     }
-    return key;
-  }
 
-  public static boolean isJSONArray(Object object) {
-    if (object instanceof JSONArray) {
-      return true;
+    public static boolean isJSONObject(Object object) {
+        if (object instanceof JSONObject) {
+            return true;
+        }
+        return false;
     }
-    return false;
-  }
 
-  public static boolean isJSONObject(Object object) {
-    if (object instanceof JSONObject) {
-      return true;
+    public static void timeWait(Long millis) {
+        try {
+            System.out.println("time wait " + millis + " ms");
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+        }
     }
-    return false;
-  }
-
-
-  public static void timeWait(Long millis) {
-    try {
-      System.out.println("time wait " + millis + " ms");
-      Thread.sleep(millis);
-    } catch (InterruptedException e) {
-    }
-  }
 }

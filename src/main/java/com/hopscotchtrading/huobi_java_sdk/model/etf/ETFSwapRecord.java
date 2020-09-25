@@ -17,19 +17,18 @@ import com.hopscotchtrading.huobi_java_sdk.constant.enums.EtfSwapTypeEnum;
 @ToString
 public class ETFSwapRecord {
 
-  private Long id;
+    private Long id;
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private EtfSwapTypeEnum type;
+    private EtfSwapTypeEnum type;
 
-  private Integer status;
+    private Integer status;
 
-  private Long gmtCreated;
+    private Long gmtCreated;
 
-  private ETFDetail detail;
-
+    private ETFDetail detail;
 
 }

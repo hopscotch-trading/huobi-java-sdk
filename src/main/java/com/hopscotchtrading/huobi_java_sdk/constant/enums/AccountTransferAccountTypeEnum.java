@@ -5,12 +5,12 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum  AccountTransferAccountTypeEnum {
+public enum AccountTransferAccountTypeEnum {
 
-  SPOT("spot"),
-  MARGIN("margin"),
+    SPOT("spot"), MARGIN("margin"),
 
-  ;
-  private String accountType;
+    ;
+
+    private String accountType;
 
 }

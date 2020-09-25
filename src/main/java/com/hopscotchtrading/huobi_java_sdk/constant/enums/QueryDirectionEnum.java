@@ -6,9 +6,8 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum QueryDirectionEnum {
-  PREV("prev"),
-  NEXT("next");
+    PREV("prev"), NEXT("next");
 
-  private final String code;
+    private final String code;
 
 }

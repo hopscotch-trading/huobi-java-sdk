@@ -35,58 +35,62 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.HuobiSubUserService;
 
 public interface SubUserClient {
 
+    List<SubUserCreationInfo> subuserCreation(SubUserCreationRequest request);
 
-  List<SubUserCreationInfo> subuserCreation(SubUserCreationRequest request);
+    GetSubUserListResult getSubUserList(GetSubUserListRequest request);
 
+    SubUserState getSubuserState(Long subUid);
 
-  GetSubUserListResult getSubUserList(GetSubUserListRequest request);
+    SubUserManagementResult subuserManagement(SubUserManagementRequest request);
 
-  SubUserState getSubuserState(Long subUid);
+    GetSubUserAccountListResult getSubuserAccountList(GetSubUserAccountListRequest request);
 
-  SubUserManagementResult subuserManagement(SubUserManagementRequest request);
+    SubUserTransferabilityResult subuserTransferability(SubUserTransferabilityRequest request);
 
-  GetSubUserAccountListResult getSubuserAccountList(GetSubUserAccountListRequest request);
+    SubUserTradableMarketResult subuserTradableMarket(SubUserTradableMarketRequest request);
 
-  SubUserTransferabilityResult subuserTransferability(SubUserTransferabilityRequest request);
+    SubUserApiKeyGenerationResult subuserApiKeyGeneration(SubUserApiKeyGenerationRequest request);
 
-  SubUserTradableMarketResult subuserTradableMarket(SubUserTradableMarketRequest request);
+    SubUserApiKeyModificationResult subuserApiKeyModification(SubUserApiKeyModificationRequest request);
 
-  SubUserApiKeyGenerationResult subuserApiKeyGeneration(SubUserApiKeyGenerationRequest request);
+    void subuserApiKeyDeletion(SubUserApiKeyDeletionRequest request);
 
-  SubUserApiKeyModificationResult subuserApiKeyModification(SubUserApiKeyModificationRequest request);
+    GetApiKeyListResult getApiKeyList(GetApiKeyListRequest request);
 
-  void subuserApiKeyDeletion(SubUserApiKeyDeletionRequest request);
+    List<DepositAddress> getSubUserDepositAddress(Long subUid, String currency);
 
-  GetApiKeyListResult getApiKeyList(GetApiKeyListRequest request);
+    GetSubUserDepositResult getSubUserDeposit(GetSubUserDepositRequest request);
 
-  List<DepositAddress> getSubUserDepositAddress(Long subUid, String currency);
+    /**
+     * Transfer to sub-user
+     * 
+     * @param request
+     * 
+     * @return
+     */
+    long transferSubuser(TransferSubuserRequest request);
 
-  GetSubUserDepositResult getSubUserDeposit(GetSubUserDepositRequest request);
-  /**
-   * Transfer to sub-user
-   * @param request
-   * @return
-   */
-  long transferSubuser(TransferSubuserRequest request);
+    /**
+     * Get sub-user's account balance
+     * 
+     * @param subuserId
+     * 
+     * @return
+     */
+    List<AccountBalance> getSubuserAccountBalance(Long subuserId);
 
-  /**
-   * Get sub-user's account balance
-   * @param subuserId
-   * @return
-   */
-  List<AccountBalance> getSubuserAccountBalance(Long subuserId);
+    /**
+     * Get the aggregated balance of all sub-accounts of the current user.
+     * 
+     * @return
+     */
+    List<SubuserAggregateBalance> getSubuserAggregateBalance();
 
-  /**
-   * Get the aggregated balance of all sub-accounts of the current user.
-   * @return
-   */
-  List<SubuserAggregateBalance> getSubuserAggregateBalance();
+    static SubUserClient create(Options options) {
 
-  static SubUserClient create(Options options) {
-
-    if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
-      return new HuobiSubUserService(options);
+        if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
+            return new HuobiSubUserService(options);
+        }
+        throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
     }
-    throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
-  }
 }

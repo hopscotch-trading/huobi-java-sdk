@@ -14,8 +14,8 @@ import lombok.ToString;
 @ToString
 public class SubCandlestickRequest {
 
-  private String symbol;
+    private String symbol;
 
-  private CandlestickIntervalEnum interval;
+    private CandlestickIntervalEnum interval;
 
 }

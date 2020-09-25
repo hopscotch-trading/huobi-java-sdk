@@ -15,10 +15,10 @@ import lombok.ToString;
 @ToString
 public class IsolatedMarginApplyLoanRequest {
 
-  private String symbol;
+    private String symbol;
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
 }

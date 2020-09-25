@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class MarketStatusParser implements HuobiModelParser<MarketStatus> {
 
-  @Override
-  public MarketStatus parse(JSONObject json) {
-    return json.toJavaObject(MarketStatus.class);
-  }
+    @Override
+    public MarketStatus parse(JSONObject json) {
+        return json.toJavaObject(MarketStatus.class);
+    }
 
-  @Override
-  public MarketStatus parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public MarketStatus parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<MarketStatus> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<MarketStatus> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

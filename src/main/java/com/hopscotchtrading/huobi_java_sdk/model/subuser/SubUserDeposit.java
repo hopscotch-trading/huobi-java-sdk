@@ -13,24 +13,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserDeposit {
 
-  private Long id;
+    private Long id;
 
-  private String currency;
+    private String currency;
 
-  private String txHash;
+    private String txHash;
 
-  private String chain;
+    private String chain;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private String address;
+    private String address;
 
-  private String addressTag;
+    private String addressTag;
 
-  private String state;
+    private String state;
 
-  private Long createTime;
+    private Long createTime;
 
-  private Long updateTime;
+    private Long updateTime;
 
 }

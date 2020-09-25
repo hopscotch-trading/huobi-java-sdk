@@ -15,8 +15,8 @@ import lombok.ToString;
 @ToString
 public class AccountAssetValuationResult {
 
-  BigDecimal balance;
+    BigDecimal balance;
 
-  Long timestamp;
+    Long timestamp;
 
 }

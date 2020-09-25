@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserTransferabilityState {
 
-  private Long subUid;
+    private Long subUid;
 
-  private String accountType;
+    private String accountType;
 
-  private Boolean transferrable;
+    private Boolean transferrable;
 
-  private String errCode;
+    private String errCode;
 
-  private String errMessage;
+    private String errMessage;
 
 }

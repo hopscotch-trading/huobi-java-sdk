@@ -10,21 +10,19 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class GetSubUserListResultParser implements HuobiModelParser<GetSubUserListResult> {
 
-  @Override
-  public GetSubUserListResult parse(JSONObject json) {
-    return GetSubUserListResult.builder()
-        .userList(new SubUserStateParser().parseArray(json.getJSONArray("data")))
-        .nextId(json.getLong("nextId"))
-        .build();
-  }
+    @Override
+    public GetSubUserListResult parse(JSONObject json) {
+        return GetSubUserListResult.builder().userList(new SubUserStateParser().parseArray(json.getJSONArray("data")))
+                .nextId(json.getLong("nextId")).build();
+    }
 
-  @Override
-  public GetSubUserListResult parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public GetSubUserListResult parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<GetSubUserListResult> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<GetSubUserListResult> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

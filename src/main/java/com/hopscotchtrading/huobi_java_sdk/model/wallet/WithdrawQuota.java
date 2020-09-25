@@ -15,8 +15,8 @@ import lombok.ToString;
 @ToString
 public class WithdrawQuota {
 
-  private String currency;
+    private String currency;
 
-  private List<WithdrawChainQuota> chains;
+    private List<WithdrawChainQuota> chains;
 
 }

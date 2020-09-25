@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetSubUserListResult {
 
-  private List<SubUserState> userList;
+    private List<SubUserState> userList;
 
-  private Long nextId;
+    private Long nextId;
 
 }

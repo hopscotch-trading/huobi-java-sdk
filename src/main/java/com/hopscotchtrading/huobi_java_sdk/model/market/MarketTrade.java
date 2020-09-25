@@ -15,16 +15,16 @@ import lombok.ToString;
 @ToString
 public class MarketTrade {
 
-  private String id;
+    private String id;
 
-  private Long tradeId;
+    private Long tradeId;
 
-  private BigDecimal price;
+    private BigDecimal price;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private String direction;
+    private String direction;
 
-  private Long ts;
+    private Long ts;
 
 }

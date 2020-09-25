@@ -14,12 +14,12 @@ import lombok.ToString;
 @ToString
 public class BatchCancelOpenOrdersRequest {
 
-  private Long accountId;
+    private Long accountId;
 
-  private String symbol;
+    private String symbol;
 
-  private OrderSideEnum side;
+    private OrderSideEnum side;
 
-  private Integer size;
+    private Integer size;
 
 }

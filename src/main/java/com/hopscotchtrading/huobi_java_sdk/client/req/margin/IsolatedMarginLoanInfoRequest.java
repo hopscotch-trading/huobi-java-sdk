@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class IsolatedMarginLoanInfoRequest {
 
-  private String symbols;
+    private String symbols;
 
 }

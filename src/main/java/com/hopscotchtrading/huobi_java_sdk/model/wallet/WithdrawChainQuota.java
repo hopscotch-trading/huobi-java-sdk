@@ -13,19 +13,19 @@ import lombok.ToString;
 @ToString
 public class WithdrawChainQuota {
 
-  private String chain;
+    private String chain;
 
-  private String maxWithdrawAmt;
+    private String maxWithdrawAmt;
 
-  private String withdrawQuotaPerDay;
+    private String withdrawQuotaPerDay;
 
-  private String remainWithdrawQuotaPerDay;
+    private String remainWithdrawQuotaPerDay;
 
-  private String withdrawQuotaPerYear;
+    private String withdrawQuotaPerYear;
 
-  private String remainWithdrawQuotaPerYear;
+    private String remainWithdrawQuotaPerYear;
 
-  private String withdrawQuotaTotal;
+    private String withdrawQuotaTotal;
 
-  private String remainWithdrawQuotaTotal;
+    private String remainWithdrawQuotaTotal;
 }

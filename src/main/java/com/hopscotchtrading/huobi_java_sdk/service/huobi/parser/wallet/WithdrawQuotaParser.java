@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class WithdrawQuotaParser implements HuobiModelParser<WithdrawQuota> {
 
-  @Override
-  public WithdrawQuota parse(JSONObject json) {
-    return json.toJavaObject(WithdrawQuota.class);
-  }
+    @Override
+    public WithdrawQuota parse(JSONObject json) {
+        return json.toJavaObject(WithdrawQuota.class);
+    }
 
-  @Override
-  public WithdrawQuota parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public WithdrawQuota parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<WithdrawQuota> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<WithdrawQuota> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

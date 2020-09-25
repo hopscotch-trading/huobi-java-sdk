@@ -16,22 +16,21 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.HuobiAlgoService;
 
 public interface AlgoClient {
 
-  CreateAlgoOrderResult createAlgoOrder(CreateAlgoOrderRequest request);
+    CreateAlgoOrderResult createAlgoOrder(CreateAlgoOrderRequest request);
 
-  CancelAlgoOrderResult cancelAlgoOrder(CancelAlgoOrderRequest request);
+    CancelAlgoOrderResult cancelAlgoOrder(CancelAlgoOrderRequest request);
 
-  GetOpenAlgoOrdersResult getOpenAlgoOrders(GetOpenAlgoOrdersRequest request);
+    GetOpenAlgoOrdersResult getOpenAlgoOrders(GetOpenAlgoOrdersRequest request);
 
-  GetHistoryAlgoOrdersResult getHistoryAlgoOrders(GetHistoryAlgoOrdersRequest request);
+    GetHistoryAlgoOrdersResult getHistoryAlgoOrders(GetHistoryAlgoOrdersRequest request);
 
-  AlgoOrder getAlgoOrdersSpecific(String clientOrderId);
+    AlgoOrder getAlgoOrdersSpecific(String clientOrderId);
 
+    static AlgoClient create(Options options) {
 
-  static AlgoClient create(Options options) {
-
-    if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
-      return new HuobiAlgoService(options);
+        if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
+            return new HuobiAlgoService(options);
+        }
+        throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
     }
-    throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
-  }
 }

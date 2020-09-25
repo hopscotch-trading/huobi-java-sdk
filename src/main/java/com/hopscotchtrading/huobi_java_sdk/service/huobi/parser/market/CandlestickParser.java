@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class CandlestickParser implements HuobiModelParser<Candlestick> {
 
-  @Override
-  public Candlestick parse(JSONObject json) {
-    return json.toJavaObject(Candlestick.class);
-  }
+    @Override
+    public Candlestick parse(JSONObject json) {
+        return json.toJavaObject(Candlestick.class);
+    }
 
-  @Override
-  public Candlestick parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public Candlestick parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<Candlestick> parseArray(JSONArray jsonArray) {
-    return jsonArray.toJavaList(Candlestick.class);
-  }
+    @Override
+    public List<Candlestick> parseArray(JSONArray jsonArray) {
+        return jsonArray.toJavaList(Candlestick.class);
+    }
 }

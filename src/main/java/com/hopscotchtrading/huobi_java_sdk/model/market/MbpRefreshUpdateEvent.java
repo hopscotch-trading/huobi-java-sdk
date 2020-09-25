@@ -13,14 +13,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MbpRefreshUpdateEvent {
 
-  private String topic;
+    private String topic;
 
-  private Long ts;
+    private Long ts;
 
-  private Long seqNum;
+    private Long seqNum;
 
-  private List<PriceLevel> bids;
+    private List<PriceLevel> bids;
 
-  private List<PriceLevel> asks;
+    private List<PriceLevel> asks;
 
 }

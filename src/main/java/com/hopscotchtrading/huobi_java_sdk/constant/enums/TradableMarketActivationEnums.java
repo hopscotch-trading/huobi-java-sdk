@@ -5,12 +5,10 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum  TradableMarketActivationEnums {
+public enum TradableMarketActivationEnums {
 
-  ACTIVATED("activated"),
-  DEACTIVATED("deactivated"),
-  ;
+    ACTIVATED("activated"), DEACTIVATED("deactivated"),;
 
-  private final String activation;
+    private final String activation;
 
 }

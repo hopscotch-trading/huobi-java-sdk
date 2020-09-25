@@ -15,9 +15,9 @@ import lombok.ToString;
 @ToString
 public class SubuserAggregateBalance {
 
-  private String currency;
+    private String currency;
 
-  private String type;
+    private String type;
 
-  private BigDecimal balance;
+    private BigDecimal balance;
 }

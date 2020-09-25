@@ -7,9 +7,9 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum AlgoOrderSideEnum {
 
-  BUY("buy"),
-  SELL("sell"),
+    BUY("buy"), SELL("sell"),
 
-  ;
-  private final String side;
+    ;
+
+    private final String side;
 }

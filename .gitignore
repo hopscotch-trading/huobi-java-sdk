@@ -35,3 +35,4 @@ build/
 ### Maven ###
 .m2
 .cache
+/logs/

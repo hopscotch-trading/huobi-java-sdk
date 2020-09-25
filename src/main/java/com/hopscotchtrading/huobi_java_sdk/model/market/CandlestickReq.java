@@ -15,10 +15,10 @@ import lombok.ToString;
 @ToString
 public class CandlestickReq {
 
-  private String ch;
+    private String ch;
 
-  private Long ts;
+    private Long ts;
 
-  private List<Candlestick> candlestickList;
+    private List<Candlestick> candlestickList;
 
 }

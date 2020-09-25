@@ -5,10 +5,9 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum  DepositWithdrawTypeEnum {
+public enum DepositWithdrawTypeEnum {
 
-  DEPOSIT("deposit"),
-  WITHDRAW("withdraw");
+    DEPOSIT("deposit"), WITHDRAW("withdraw");
 
-  private final String type;
+    private final String type;
 }

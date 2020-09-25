@@ -11,23 +11,23 @@ import org.powermock.modules.junit4.PowerMockRunner;
 @RunWith(PowerMockRunner.class)
 public class AccountChangeEventParserTest {
 
-  public static final String JSON_ARRAY_STRING = "{\"op\":\"notify\",\"ts\":1571905790451,\"topic\":\"accounts\",\"data\":{\"event\":\"order.place\",\"list\":[{\"account-id\":290082,\"currency\":\"usdt\",\"type\":\"trade\",\"balance\":\"121.014779785111216197\"}]}}";
+    public static final String JSON_ARRAY_STRING = "{\"op\":\"notify\",\"ts\":1571905790451,\"topic\":\"accounts\",\"data\":{\"event\":\"order.place\",\"list\":[{\"account-id\":290082,\"currency\":\"usdt\",\"type\":\"trade\",\"balance\":\"121.014779785111216197\"}]}}";
 
-  private AccountChangeEventParser parser;
+    private AccountChangeEventParser parser;
 
-  @Before
-  public void init() {
-    parser = new AccountChangeEventParser();
-  }
+    @Before
+    public void init() {
+        parser = new AccountChangeEventParser();
+    }
 
-  @Test
-  public void test_parse(){
+    @Test
+    public void test_parse() {
 
-    AccountChangeEvent event = parser.parse(JSON.parseObject(JSON_ARRAY_STRING));
-    Assert.assertNotNull(event);
-    Assert.assertNotNull(event.getList());
-    Assert.assertTrue(event.getList().size() == 1);
+        AccountChangeEvent event = parser.parse(JSON.parseObject(JSON_ARRAY_STRING));
+        Assert.assertNotNull(event);
+        Assert.assertNotNull(event.getList());
+        Assert.assertTrue(event.getList().size() == 1);
 
-  }
+    }
 
 }

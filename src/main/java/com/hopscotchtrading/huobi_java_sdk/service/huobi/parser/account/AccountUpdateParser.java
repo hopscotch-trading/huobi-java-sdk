@@ -10,19 +10,19 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class AccountUpdateParser implements HuobiModelParser<AccountUpdate> {
 
-  @Override
-  public AccountUpdate parse(JSONObject json) {
-    AccountUpdate update = json.toJavaObject(AccountUpdate.class);
-    return update;
-  }
+    @Override
+    public AccountUpdate parse(JSONObject json) {
+        AccountUpdate update = json.toJavaObject(AccountUpdate.class);
+        return update;
+    }
 
-  @Override
-  public AccountUpdate parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public AccountUpdate parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<AccountUpdate> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<AccountUpdate> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

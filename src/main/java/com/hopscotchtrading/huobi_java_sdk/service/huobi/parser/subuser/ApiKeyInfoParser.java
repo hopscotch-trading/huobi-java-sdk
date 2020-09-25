@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class ApiKeyInfoParser implements HuobiModelParser<ApiKeyInfo> {
 
-  @Override
-  public ApiKeyInfo parse(JSONObject json) {
-    return null;
-  }
+    @Override
+    public ApiKeyInfo parse(JSONObject json) {
+        return null;
+    }
 
-  @Override
-  public ApiKeyInfo parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public ApiKeyInfo parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<ApiKeyInfo> parseArray(JSONArray jsonArray) {
-    return jsonArray.toJavaList(ApiKeyInfo.class);
-  }
+    @Override
+    public List<ApiKeyInfo> parseArray(JSONArray jsonArray) {
+        return jsonArray.toJavaList(ApiKeyInfo.class);
+    }
 }

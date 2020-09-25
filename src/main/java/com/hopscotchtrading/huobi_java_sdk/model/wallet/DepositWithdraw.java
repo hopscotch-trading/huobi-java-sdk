@@ -15,32 +15,32 @@ import lombok.ToString;
 @ToString
 public class DepositWithdraw {
 
-  private Long id;
+    private Long id;
 
-  private String type;
+    private String type;
 
-  private String currency;
+    private String currency;
 
-  private String txHash;
+    private String txHash;
 
-  private String chain;
+    private String chain;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private String address;
+    private String address;
 
-  private String addressTag;
+    private String addressTag;
 
-  private BigDecimal fee;
+    private BigDecimal fee;
 
-  private String state;
+    private String state;
 
-  private String errorCode;
+    private String errorCode;
 
-  private String errorMessage;
+    private String errorMessage;
 
-  private Long createdAt;
+    private Long createdAt;
 
-  private Long updatedAt;
+    private Long updatedAt;
 
 }

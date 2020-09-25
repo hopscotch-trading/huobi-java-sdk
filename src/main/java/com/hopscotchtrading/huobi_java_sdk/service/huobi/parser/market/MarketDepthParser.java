@@ -10,23 +10,20 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class MarketDepthParser implements HuobiModelParser<MarketDepth> {
 
-  @Override
-  public MarketDepth parse(JSONObject json) {
-    return MarketDepth.builder()
-        .version(json.getLong("version"))
-        .ts(json.getLong("ts"))
-        .bids(new PriceLevelParser().parseArray(json.getJSONArray("bids")))
-        .asks(new PriceLevelParser().parseArray(json.getJSONArray("asks")))
-        .build();
-  }
+    @Override
+    public MarketDepth parse(JSONObject json) {
+        return MarketDepth.builder().version(json.getLong("version")).ts(json.getLong("ts"))
+                .bids(new PriceLevelParser().parseArray(json.getJSONArray("bids")))
+                .asks(new PriceLevelParser().parseArray(json.getJSONArray("asks"))).build();
+    }
 
-  @Override
-  public MarketDepth parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public MarketDepth parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<MarketDepth> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<MarketDepth> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

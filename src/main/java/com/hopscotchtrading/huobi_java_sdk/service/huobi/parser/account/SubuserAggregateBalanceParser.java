@@ -11,25 +11,25 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class SubuserAggregateBalanceParser implements HuobiModelParser<SubuserAggregateBalance> {
 
-  @Override
-  public SubuserAggregateBalance parse(JSONObject json) {
-    SubuserAggregateBalance balance = json.toJavaObject(SubuserAggregateBalance.class);
-    balance.setType(json.getString("type"));
-    return balance;
-  }
-
-  @Override
-  public SubuserAggregateBalance parse(JSONArray json) {
-    return null;
-  }
-
-  @Override
-  public List<SubuserAggregateBalance> parseArray(JSONArray jsonArray) {
-    List<SubuserAggregateBalance> balanceList = new ArrayList<>(jsonArray.size());
-    for (int i = 0; i < jsonArray.size(); i++) {
-      JSONObject jsonObject = jsonArray.getJSONObject(i);
-      balanceList.add(parse(jsonObject));
+    @Override
+    public SubuserAggregateBalance parse(JSONObject json) {
+        SubuserAggregateBalance balance = json.toJavaObject(SubuserAggregateBalance.class);
+        balance.setType(json.getString("type"));
+        return balance;
     }
-    return balanceList;
-  }
+
+    @Override
+    public SubuserAggregateBalance parse(JSONArray json) {
+        return null;
+    }
+
+    @Override
+    public List<SubuserAggregateBalance> parseArray(JSONArray jsonArray) {
+        List<SubuserAggregateBalance> balanceList = new ArrayList<>(jsonArray.size());
+        for (int i = 0; i < jsonArray.size(); i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            balanceList.add(parse(jsonObject));
+        }
+        return balanceList;
+    }
 }

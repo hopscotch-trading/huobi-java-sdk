@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CancelAlgoOrderResult {
 
-  private List<String> accepted;
+    private List<String> accepted;
 
-  private List<String> rejected;
+    private List<String> rejected;
 
 }

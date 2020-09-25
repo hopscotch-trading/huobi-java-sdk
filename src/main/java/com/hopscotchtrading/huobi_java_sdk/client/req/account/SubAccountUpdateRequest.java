@@ -14,6 +14,6 @@ import lombok.ToString;
 @ToString
 public class SubAccountUpdateRequest {
 
-  private AccountUpdateModeEnum accountUpdateMode;
+    private AccountUpdateModeEnum accountUpdateMode;
 
 }

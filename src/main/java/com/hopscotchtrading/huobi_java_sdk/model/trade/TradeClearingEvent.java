@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TradeClearingEvent {
-  private String action;
+    private String action;
 
-  private String topic;
+    private String topic;
 
-  private TradeClearing tradeClearing;
+    private TradeClearing tradeClearing;
 
 }

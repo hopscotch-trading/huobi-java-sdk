@@ -10,19 +10,19 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class PointTransferResultParser implements HuobiModelParser<PointTransferResult> {
 
-  @Override
-  public PointTransferResult parse(JSONObject json) {
-    return json.toJavaObject(PointTransferResult.class);
-  }
+    @Override
+    public PointTransferResult parse(JSONObject json) {
+        return json.toJavaObject(PointTransferResult.class);
+    }
 
-  @Override
-  public PointTransferResult parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public PointTransferResult parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<PointTransferResult> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<PointTransferResult> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 
 }

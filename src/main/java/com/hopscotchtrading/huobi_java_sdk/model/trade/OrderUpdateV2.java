@@ -13,48 +13,46 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OrderUpdateV2 {
 
-  private String eventType;
+    private String eventType;
 
-  private String symbol;
+    private String symbol;
 
-  private Long orderId;
+    private Long orderId;
 
-  private String clientOrderId;
+    private String clientOrderId;
 
-  private String type;
+    private String type;
 
-  private String orderStatus;
+    private String orderStatus;
 
-  private BigDecimal remainAmt;
+    private BigDecimal remainAmt;
 
-  /******* creation field ******/
+    /******* creation field ******/
 
-  private BigDecimal orderPrice;
+    private BigDecimal orderPrice;
 
-  private BigDecimal orderSize;
+    private BigDecimal orderSize;
 
+    private Long orderCreateTime;
 
-  private Long orderCreateTime;
+    /******* trade field ******/
 
-  /******* trade field ******/
+    private Long tradeId;
 
-  private Long tradeId;
+    private BigDecimal tradePrice;
 
-  private BigDecimal tradePrice;
+    private BigDecimal tradeVolume;
 
-  private BigDecimal tradeVolume;
+    private Boolean aggressor;
 
-  private Boolean aggressor;
+    private Long tradeTime;
 
-  private Long tradeTime;
+    /******* cancellation field ******/
 
+    private Long lastActTime;
 
-  /******* cancellation field ******/
+    private Long errCode;
 
-  private Long lastActTime;
-
-  private Long errCode;
-
-  private String errMessage;
+    private String errMessage;
 
 }

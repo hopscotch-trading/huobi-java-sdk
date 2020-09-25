@@ -18,30 +18,30 @@ import lombok.ToString;
 @ToString
 public class CrossMarginLoanOrdersRequest {
 
-  private String currency;
+    private String currency;
 
-  private Date startDate;
+    private Date startDate;
 
-  private Date endDate;
+    private Date endDate;
 
-  private List<LoanOrderStateEnum> states;
+    private List<LoanOrderStateEnum> states;
 
-  private Long from;
+    private Long from;
 
-  private QueryDirectionEnum direction;
+    private QueryDirectionEnum direction;
 
-  private Integer size;
+    private Integer size;
 
-  public String getStatesString(){
-    String stateString = null;
-    if (this.getStates() != null && this.getStates().size() > 0) {
-      StringBuffer statesBuffer = new StringBuffer();
-      this.getStates().forEach(orderType -> {
-        statesBuffer.append(orderType.getCode()).append(",");
-      });
-      stateString = statesBuffer.substring(0, statesBuffer.length() - 1);
+    public String getStatesString() {
+        String stateString = null;
+        if (this.getStates() != null && this.getStates().size() > 0) {
+            StringBuffer statesBuffer = new StringBuffer();
+            this.getStates().forEach(orderType -> {
+                statesBuffer.append(orderType.getCode()).append(",");
+            });
+            stateString = statesBuffer.substring(0, statesBuffer.length() - 1);
+        }
+        return stateString;
     }
-    return stateString;
-  }
 
 }

@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class OrderUpdateV2Parser implements HuobiModelParser<OrderUpdateV2> {
 
-  @Override
-  public OrderUpdateV2 parse(JSONObject json) {
-    return json.toJavaObject(OrderUpdateV2.class);
-  }
+    @Override
+    public OrderUpdateV2 parse(JSONObject json) {
+        return json.toJavaObject(OrderUpdateV2.class);
+    }
 
-  @Override
-  public OrderUpdateV2 parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public OrderUpdateV2 parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<OrderUpdateV2> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<OrderUpdateV2> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

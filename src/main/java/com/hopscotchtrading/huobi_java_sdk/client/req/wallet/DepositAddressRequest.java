@@ -13,6 +13,6 @@ import lombok.ToString;
 @ToString
 public class DepositAddressRequest {
 
-  private String currency;
+    private String currency;
 
 }

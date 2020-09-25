@@ -5,14 +5,10 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum  DepthLevels {
+public enum DepthLevels {
 
-  LEVEL_5(5),
-  LEVEL_10(10),
-  LEVEL_20(20),
-  LEVEL_150(150),
-  ;
+    LEVEL_5(5), LEVEL_10(10), LEVEL_20(20), LEVEL_150(150),;
 
-  private final int level;
+    private final int level;
 
 }

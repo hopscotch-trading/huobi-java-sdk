@@ -15,14 +15,14 @@ import lombok.ToString;
 @ToString
 public class DepositWithdrawRequest {
 
-  private DepositWithdrawTypeEnum type;
+    private DepositWithdrawTypeEnum type;
 
-  private String currency;
+    private String currency;
 
-  private Long from;
+    private Long from;
 
-  private Integer size;
+    private Integer size;
 
-  private QueryDirectionEnum direction;
+    private QueryDirectionEnum direction;
 
 }

@@ -5,8 +5,8 @@ import java.util.List;
 
 public class SymbolUtils {
 
-  public static List<String> parseSymbols(String symbol) {
-    return Arrays.asList(symbol.split("[,]"));
-  }
+    public static List<String> parseSymbols(String symbol) {
+        return Arrays.asList(symbol.split("[,]"));
+    }
 
 }

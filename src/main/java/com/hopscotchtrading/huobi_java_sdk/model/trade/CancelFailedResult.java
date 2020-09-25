@@ -13,12 +13,12 @@ import lombok.ToString;
 @ToString
 public class CancelFailedResult {
 
-  private Long orderId;
+    private Long orderId;
 
-  private String errMsg;
+    private String errMsg;
 
-  private String errCode;
+    private String errCode;
 
-  private Integer orderState;
+    private Integer orderState;
 
 }

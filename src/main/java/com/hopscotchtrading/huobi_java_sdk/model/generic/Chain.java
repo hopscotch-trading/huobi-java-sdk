@@ -15,44 +15,44 @@ import lombok.ToString;
 @ToString
 public class Chain {
 
-  private String chain;
+    private String chain;
 
-  private String baseChain;
+    private String baseChain;
 
-  private String baseChainProtocol;
+    private String baseChainProtocol;
 
-  private Boolean isDynamic;
+    private Boolean isDynamic;
 
-  private int numOfConfirmations;
+    private int numOfConfirmations;
 
-  private int numOfFastConfirmations;
+    private int numOfFastConfirmations;
 
-  private String depositStatus;
+    private String depositStatus;
 
-  private BigDecimal minDepositAmt;
+    private BigDecimal minDepositAmt;
 
-  private String withdrawStatus;
+    private String withdrawStatus;
 
-  private BigDecimal minWithdrawAmt;
+    private BigDecimal minWithdrawAmt;
 
-  private BigDecimal maxWithdrawAmt;
+    private BigDecimal maxWithdrawAmt;
 
-  private BigDecimal withdrawQuotaPerDay;
+    private BigDecimal withdrawQuotaPerDay;
 
-  private BigDecimal withdrawQuotaPerYear;
+    private BigDecimal withdrawQuotaPerYear;
 
-  private BigDecimal withdrawQuotaTotal;
+    private BigDecimal withdrawQuotaTotal;
 
-  private int withdrawPrecision;
+    private int withdrawPrecision;
 
-  private  String withdrawFeeType;
+    private String withdrawFeeType;
 
-  private BigDecimal transactFeeWithdraw;
+    private BigDecimal transactFeeWithdraw;
 
-  private BigDecimal minTransactFeeWithdraw;
+    private BigDecimal minTransactFeeWithdraw;
 
-  private BigDecimal maxTransactFeeWithdraw;
+    private BigDecimal maxTransactFeeWithdraw;
 
-  private BigDecimal transactFeeRateWithdraw;
+    private BigDecimal transactFeeRateWithdraw;
 
 }

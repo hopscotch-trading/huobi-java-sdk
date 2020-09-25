@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubUserCreationInfo {
 
-  private Long uid;
+    private Long uid;
 
-  private String userName;
+    private String userName;
 
-  private String node;
+    private String node;
 
-  private String errCode;
+    private String errCode;
 
-  private String errMessage;
+    private String errMessage;
 
 }

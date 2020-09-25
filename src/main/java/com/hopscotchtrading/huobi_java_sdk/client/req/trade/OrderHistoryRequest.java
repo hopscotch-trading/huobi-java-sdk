@@ -14,14 +14,14 @@ import lombok.ToString;
 @ToString
 public class OrderHistoryRequest {
 
-  private String symbol;
+    private String symbol;
 
-  private Long startTime;
+    private Long startTime;
 
-  private Long endTime;
+    private Long endTime;
 
-  private QueryDirectionEnum direction;
+    private QueryDirectionEnum direction;
 
-  private Integer size;
+    private Integer size;
 
 }

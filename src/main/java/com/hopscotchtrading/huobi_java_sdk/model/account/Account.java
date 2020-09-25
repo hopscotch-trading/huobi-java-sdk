@@ -13,12 +13,12 @@ import lombok.ToString;
 @ToString
 public class Account {
 
-  private Long id;
+    private Long id;
 
-  private String type;
+    private String type;
 
-  private String state;
+    private String state;
 
-  private String subtype;
+    private String subtype;
 
 }

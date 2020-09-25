@@ -13,18 +13,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MbpIncrementalUpdateEvent {
 
-  private String action;
+    private String action;
 
-  private String topic;
+    private String topic;
 
-  private Long ts;
+    private Long ts;
 
-  private Long prevSeqNum;
+    private Long prevSeqNum;
 
-  private Long seqNum;
+    private Long seqNum;
 
-  private List<PriceLevel> bids;
+    private List<PriceLevel> bids;
 
-  private List<PriceLevel> asks;
+    private List<PriceLevel> asks;
 
 }

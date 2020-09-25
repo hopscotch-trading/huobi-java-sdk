@@ -13,6 +13,6 @@ import lombok.ToString;
 @ToString
 public class AccountBalanceRequest {
 
-  private Long accountId;
+    private Long accountId;
 
 }

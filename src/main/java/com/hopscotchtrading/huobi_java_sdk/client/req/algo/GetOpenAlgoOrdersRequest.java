@@ -14,19 +14,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetOpenAlgoOrdersRequest {
 
-  private Long accountId;
+    private Long accountId;
 
-  private String symbol;
+    private String symbol;
 
-  private AlgoOrderSideEnum orderSide;
+    private AlgoOrderSideEnum orderSide;
 
-  private AlgoOrderTypeEnum orderType;
+    private AlgoOrderTypeEnum orderType;
 
-  private QuerySortEnum sort;
+    private QuerySortEnum sort;
 
-  private Integer limit;
+    private Integer limit;
 
-  private Long fromId;
-
+    private Long fromId;
 
 }

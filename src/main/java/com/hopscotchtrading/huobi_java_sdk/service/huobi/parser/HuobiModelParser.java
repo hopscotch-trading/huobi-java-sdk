@@ -7,11 +7,10 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface HuobiModelParser<T> {
 
+    T parse(JSONObject json);
 
-  T parse(JSONObject json);
+    T parse(JSONArray json);
 
-  T parse(JSONArray json);
-
-  List<T> parseArray(JSONArray jsonArray);
+    List<T> parseArray(JSONArray jsonArray);
 
 }

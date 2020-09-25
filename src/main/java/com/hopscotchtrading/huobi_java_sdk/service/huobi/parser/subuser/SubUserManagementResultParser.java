@@ -10,18 +10,18 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class SubUserManagementResultParser implements HuobiModelParser<SubUserManagementResult> {
 
-  @Override
-  public SubUserManagementResult parse(JSONObject json) {
-    return json.toJavaObject(SubUserManagementResult.class);
-  }
+    @Override
+    public SubUserManagementResult parse(JSONObject json) {
+        return json.toJavaObject(SubUserManagementResult.class);
+    }
 
-  @Override
-  public SubUserManagementResult parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public SubUserManagementResult parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<SubUserManagementResult> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<SubUserManagementResult> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

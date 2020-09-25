@@ -14,20 +14,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccountTransferRequest {
 
-  private Long fromUser;
+    private Long fromUser;
 
-  private AccountTransferAccountTypeEnum fromAccountType;
+    private AccountTransferAccountTypeEnum fromAccountType;
 
-  private Long fromAccount;
+    private Long fromAccount;
 
-  private Long toUser;
+    private Long toUser;
 
-  private AccountTransferAccountTypeEnum toAccountType;
+    private AccountTransferAccountTypeEnum toAccountType;
 
-  private Long toAccount;
+    private Long toAccount;
 
-  private String currency;
+    private String currency;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
 }

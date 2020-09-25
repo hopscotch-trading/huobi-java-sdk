@@ -11,27 +11,24 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.utils.DataUtils;
 
 public class MarketTradeEventParser implements HuobiModelParser<MarketTradeEvent> {
 
-  @Override
-  public MarketTradeEvent parse(JSONObject json) {
-    String dataKey = DataUtils.getDataKey(json);
+    @Override
+    public MarketTradeEvent parse(JSONObject json) {
+        String dataKey = DataUtils.getDataKey(json);
 
-    JSONObject data = json.getJSONObject(dataKey);
-    JSONArray dataArray = data.getJSONArray("data");
+        JSONObject data = json.getJSONObject(dataKey);
+        JSONArray dataArray = data.getJSONArray("data");
 
-    return MarketTradeEvent.builder()
-        .ch(json.getString("ch"))
-        .ts(json.getLong("ts"))
-        .list(new MarketTradeParser().parseArray(dataArray))
-        .build();
-  }
+        return MarketTradeEvent.builder().ch(json.getString("ch")).ts(json.getLong("ts"))
+                .list(new MarketTradeParser().parseArray(dataArray)).build();
+    }
 
-  @Override
-  public MarketTradeEvent parse(JSONArray json) {
-    return null;
-  }
+    @Override
+    public MarketTradeEvent parse(JSONArray json) {
+        return null;
+    }
 
-  @Override
-  public List<MarketTradeEvent> parseArray(JSONArray jsonArray) {
-    return null;
-  }
+    @Override
+    public List<MarketTradeEvent> parseArray(JSONArray jsonArray) {
+        return null;
+    }
 }

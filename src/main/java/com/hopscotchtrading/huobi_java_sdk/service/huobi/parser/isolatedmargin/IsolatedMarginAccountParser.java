@@ -12,35 +12,35 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser
 
 public class IsolatedMarginAccountParser implements HuobiModelParser<IsolatedMarginAccount> {
 
-  @Override
-  public IsolatedMarginAccount parse(JSONObject json) {
-    IsolatedMarginAccount account = json.toJavaObject(IsolatedMarginAccount.class);
-    account.setType(json.getString("type"));
-    account.setState(json.getString("state"));
-    account.setFlPrice(json.getBigDecimal("fl-price"));
-    account.setFlType(json.getString("fl-type"));
-    account.setRiskRate(json.getBigDecimal("risk-rate"));
-    account.setBalanceList(new BalanceParser().parseArray(json.getJSONArray("list")));
-    return account;
-  }
-
-  @Override
-  public IsolatedMarginAccount parse(JSONArray json) {
-    return null;
-  }
-
-  @Override
-  public List<IsolatedMarginAccount> parseArray(JSONArray jsonArray) {
-
-    if (jsonArray == null || jsonArray.size() <= 0) {
-      return new ArrayList<>();
+    @Override
+    public IsolatedMarginAccount parse(JSONObject json) {
+        IsolatedMarginAccount account = json.toJavaObject(IsolatedMarginAccount.class);
+        account.setType(json.getString("type"));
+        account.setState(json.getString("state"));
+        account.setFlPrice(json.getBigDecimal("fl-price"));
+        account.setFlType(json.getString("fl-type"));
+        account.setRiskRate(json.getBigDecimal("risk-rate"));
+        account.setBalanceList(new BalanceParser().parseArray(json.getJSONArray("list")));
+        return account;
     }
 
-    List<IsolatedMarginAccount> list = new ArrayList<>();
-    for (int i=0;i<jsonArray.size();i++) {
-      JSONObject data = jsonArray.getJSONObject(i);
-      list.add(parse(data));
+    @Override
+    public IsolatedMarginAccount parse(JSONArray json) {
+        return null;
     }
-    return list;
-  }
+
+    @Override
+    public List<IsolatedMarginAccount> parseArray(JSONArray jsonArray) {
+
+        if (jsonArray == null || jsonArray.size() <= 0) {
+            return new ArrayList<>();
+        }
+
+        List<IsolatedMarginAccount> list = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            JSONObject data = jsonArray.getJSONObject(i);
+            list.add(parse(data));
+        }
+        return list;
+    }
 }

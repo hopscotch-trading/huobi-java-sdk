@@ -13,23 +13,23 @@ import com.hopscotchtrading.huobi_java_sdk.service.huobi.HuobiGenericService;
 
 public interface GenericClient {
 
-  String getSystemStatus();
+    String getSystemStatus();
 
-  MarketStatus getMarketStatus();
+    MarketStatus getMarketStatus();
 
-  List<Symbol> getSymbols();
+    List<Symbol> getSymbols();
 
-  List<String> getCurrencys();
+    List<String> getCurrencys();
 
-  List<CurrencyChain> getCurrencyChains(CurrencyChainsRequest request);
+    List<CurrencyChain> getCurrencyChains(CurrencyChainsRequest request);
 
-  Long getTimestamp();
+    Long getTimestamp();
 
-  static GenericClient create(Options options) {
+    static GenericClient create(Options options) {
 
-    if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
-      return new HuobiGenericService(options);
+        if (options.getExchange().equals(ExchangeEnum.HUOBI)) {
+            return new HuobiGenericService(options);
+        }
+        throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
     }
-    throw new SDKException(SDKException.INPUT_ERROR, "Unsupport Exchange.");
-  }
 }

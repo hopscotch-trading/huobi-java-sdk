@@ -1,6 +1,5 @@
 package com.hopscotchtrading.huobi_java_sdk.client.req.market;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +13,6 @@ import lombok.ToString;
 @ToString
 public class ReqMarketDetailRequest {
 
-  private String symbol;
+    private String symbol;
 
 }
