@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -13,7 +12,6 @@ import java.io.IOException;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-@Slf4j
 public class ConnectionFactory {
 
     private static Boolean LATENCY_DEBUG_SWATCH = Boolean.FALSE;
@@ -50,7 +48,7 @@ public class ConnectionFactory {
         Response response = null;
         String str = null;
         try {
-            log.debug("[Request URL]{}", request.url());
+            // log.debug("[Request URL]{}", request.url());
             response = client.newCall(request).execute();
             if (response.code() != 200) {
                 throw new SDKException(SDKException.EXEC_ERROR,
@@ -62,7 +60,7 @@ public class ConnectionFactory {
             } else {
                 throw new SDKException(SDKException.ENV_ERROR, "[Execute] Cannot get the response from server");
             }
-            log.debug("[Response]{}", str);
+            // log.debug("[Response]{}", str);
             return str;
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,7 +1,6 @@
 package com.hopscotchtrading.huobi_java_sdk.utils;
 
 import com.hopscotchtrading.huobi_java_sdk.constant.enums.ConnectionStateEnum;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -9,7 +8,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-@Slf4j
 public class WebSocketWatchDog {
 
     public static final long RECEIVE_LIMIT_TS = 60_000;
@@ -29,7 +27,7 @@ public class WebSocketWatchDog {
 
                     long ts = System.currentTimeMillis() - connection.getLastReceivedTime();
                     if (ts > RECEIVE_LIMIT_TS) {
-                        log.warn("[Sub][" + connection.getConnectionId() + "] No response from server");
+                        // log.warn("[Sub][" + connection.getConnectionId() + "] No response from server");
                         connection.reConnect(DELAY_ON_FAILURE);
                     }
 

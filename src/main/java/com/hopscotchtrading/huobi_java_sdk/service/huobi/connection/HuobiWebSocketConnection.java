@@ -1,35 +1,27 @@
 package com.hopscotchtrading.huobi_java_sdk.service.huobi.connection;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.List;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.hopscotchtrading.huobi_java_sdk.constant.Options;
 import com.hopscotchtrading.huobi_java_sdk.constant.enums.ConnectionStateEnum;
+import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser;
+import com.hopscotchtrading.huobi_java_sdk.service.huobi.signature.ApiSignature;
+import com.hopscotchtrading.huobi_java_sdk.service.huobi.signature.ApiSignatureV2;
+import com.hopscotchtrading.huobi_java_sdk.service.huobi.signature.UrlParamsBuilder;
+import com.hopscotchtrading.huobi_java_sdk.utils.*;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
 import okio.ByteString;
 
-import com.hopscotchtrading.huobi_java_sdk.constant.Options;
-import com.hopscotchtrading.huobi_java_sdk.service.huobi.parser.HuobiModelParser;
-import com.hopscotchtrading.huobi_java_sdk.service.huobi.signature.ApiSignature;
-import com.hopscotchtrading.huobi_java_sdk.service.huobi.signature.ApiSignatureV2;
-import com.hopscotchtrading.huobi_java_sdk.service.huobi.signature.UrlParamsBuilder;
-import com.hopscotchtrading.huobi_java_sdk.utils.ConnectionFactory;
-import com.hopscotchtrading.huobi_java_sdk.utils.IdGenerator;
-import com.hopscotchtrading.huobi_java_sdk.utils.InternalUtils;
-import com.hopscotchtrading.huobi_java_sdk.utils.ResponseCallback;
-import com.hopscotchtrading.huobi_java_sdk.utils.WebSocketConnection;
-import com.hopscotchtrading.huobi_java_sdk.utils.WebSocketWatchDog;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
 
 @Data
-@Slf4j
 public class HuobiWebSocketConnection extends WebSocketListener implements WebSocketConnection {
 
     public static final String HUOBI_TRADING_WEBSOCKET_PATH = "/ws/v1";
@@ -131,15 +123,15 @@ public class HuobiWebSocketConnection extends WebSocketListener implements WebSo
 
     void connect() {
         if (state == ConnectionStateEnum.CONNECTED) {
-            log.info("[Connection][" + this.getId() + "] Already connected");
+            // // log.info("[Connection][" + this.getId() + "] Already connected");
             return;
         }
-        log.info("[Connection][" + this.getId() + "] Connecting...");
+        // // log.info("[Connection][" + this.getId() + "] Connecting...");
         webSocket = ConnectionFactory.createWebSocket(okhttpRequest, this);
     }
 
     public void reConnect(int delayInSecond) {
-        log.warn("[Sub][" + this.getId() + "] Reconnecting after " + delayInSecond + " seconds later");
+        // // log.warn("[Sub][" + this.getId() + "] Reconnecting after " + delayInSecond + " seconds later");
         if (webSocket != null) {
             webSocket.cancel();
             webSocket = null;
@@ -171,12 +163,12 @@ public class HuobiWebSocketConnection extends WebSocketListener implements WebSo
 
     public void send(String str) {
         boolean result = false;
-        log.info("[Connection Send]{}", str);
+        // log.info("[Connection Send]{}", str);
         if (webSocket != null) {
             result = webSocket.send(str);
         }
         if (!result) {
-            log.error("[Connection Send][" + this.getId() + "] Failed to send message");
+            // log.error("[Connection Send][" + this.getId() + "] Failed to send message");
             closeOnError();
         }
     }
@@ -186,7 +178,7 @@ public class HuobiWebSocketConnection extends WebSocketListener implements WebSo
         super.onMessage(webSocket, text);
         lastReceivedTime = System.currentTimeMillis();
 
-        log.debug("[On Message Text]:{}", text);
+        // log.debug("[On Message Text]:{}", text);
         try {
             JSONObject json = JSON.parseObject(text);
 
@@ -208,7 +200,7 @@ public class HuobiWebSocketConnection extends WebSocketListener implements WebSo
             }
 
         } catch (Exception e) {
-            log.error("[On Message][{}]: catch exception:", this.getId(), e);
+            // log.error("[On Message][{}]: catch exception:", this.getId(), e);
             closeOnError();
         }
     }
@@ -225,19 +217,19 @@ public class HuobiWebSocketConnection extends WebSocketListener implements WebSo
             try {
                 data = new String(InternalUtils.decode(bytes.toByteArray()));
             } catch (IOException e) {
-                log.error("[Connection On Message][" + this.getId() + "] Receive message error: " + e.getMessage());
+                // log.error("[Connection On Message][" + this.getId() + "] Receive message error: " + e.getMessage());
                 closeOnError();
                 return;
             }
-            log.debug("[Connection On Message][{}] {}", this.getId(), data);
+            // log.debug("[Connection On Message][{}] {}", this.getId(), data);
             JSONObject jsonObject = JSON.parseObject(data);
 
             if (jsonObject.containsKey("status") && !"ok".equals(jsonObject.getString("status"))) {
                 String errorCode = jsonObject.getString("err-code");
                 String errorMsg = jsonObject.getString("err-msg");
                 onError(errorCode + ": " + errorMsg, null);
-                log.error("[Connection On Message][" + this.getId() + "] Got error from server: " + errorCode + "; "
-                        + errorMsg);
+                // log.error("[Connection On Message][" + this.getId() + "] Got error from server: " + errorCode + "; "
+                //         + errorMsg);
                 close();
             } else if (jsonObject.containsKey("op")) {
                 String op = jsonObject.getString("op");
@@ -257,13 +249,13 @@ public class HuobiWebSocketConnection extends WebSocketListener implements WebSo
             } else if (jsonObject.containsKey("subbed")) {
             }
         } catch (Exception e) {
-            log.error("[Connection On Message][" + this.getId() + "] Unexpected error: " + e.getMessage());
+            // log.error("[Connection On Message][" + this.getId() + "] Unexpected error: " + e.getMessage());
             closeOnError();
         }
     }
 
     private void onError(String errorMessage, Throwable e) {
-        log.error("[Connection error][" + this.getId() + "] " + errorMessage);
+        // log.error("[Connection error][" + this.getId() + "] " + errorMessage);
         closeOnError();
     }
 
@@ -313,7 +305,7 @@ public class HuobiWebSocketConnection extends WebSocketListener implements WebSo
     }
 
     public void close() {
-        log.error("[Connection close][" + this.getId() + "] Closing normally");
+        // log.error("[Connection close][" + this.getId() + "] Closing normally");
         webSocket.cancel();
         webSocket = null;
         WebSocketWatchDog.onClosedNormally(this);
@@ -332,7 +324,7 @@ public class HuobiWebSocketConnection extends WebSocketListener implements WebSo
     public void onOpen(WebSocket webSocket, Response response) {
         super.onOpen(webSocket, response);
         this.webSocket = webSocket;
-        log.info("[Connection][" + this.getId() + "] Connected to server");
+        // log.info("[Connection][" + this.getId() + "] Connected to server");
         if (options.isWebSocketAutoConnect()) {
             WebSocketWatchDog.onConnectionCreated(this);
         }
@@ -372,7 +364,7 @@ public class HuobiWebSocketConnection extends WebSocketListener implements WebSo
         if (webSocket != null) {
             this.webSocket.cancel();
             state = ConnectionStateEnum.CLOSED_ON_ERROR;
-            log.error("[Connection error][" + this.getId() + "] Connection is closing due to error");
+            // log.error("[Connection error][" + this.getId() + "] Connection is closing due to error");
         }
     }
 
